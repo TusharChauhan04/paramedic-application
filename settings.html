@@ -1,0 +1,787 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - Air Medical 24x7</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+
+<body>
+  <div class="min-h-screen bg-gray-50">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <img src="assets/air-medical-logo.png" alt="Air Medical 24x7" onerror="this.style.display='none'">
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          Dashboard
+        </a>
+        <a href="cases.html" class="sidebar-link">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+          </svg>
+          Cases & Forms
+        </a>
+        <a href="expenses.html" class="sidebar-link">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <line x1="12" y1="1" x2="12" y2="23"></line>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+          Expenses
+        </a>
+        <a href="location.html" class="sidebar-link">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          Location Tracking
+        </a>
+        <a href="settings.html" class="sidebar-link active">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path
+              d="M12 1v6m0 6v6m5.196-15.804L13.464 7.46m-3.392 9.08-3.732 3.732m15.804-5.195L17.54 13.464m-9.08-3.392-3.732-3.732">
+            </path>
+          </svg>
+          Settings
+        </a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header -->
+      <header class="header">
+        <div class="flex-1 flex items-center">
+          <button type="button" id="mobile-menu-btn" class="btn-icon btn-ghost" style="display: none;">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <div class="header-actions">
+          <button class="btn-icon btn-ghost notification-btn">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="notification-badge"></span>
+          </button>
+          <div class="user-dropdown">
+            <button id="user-dropdown-btn" class="user-btn">
+              <div class="user-avatar" id="user-avatar">JD</div>
+              <span class="hidden md:block text-sm font-medium text-gray-700" id="user-display-name">User</span>
+            </button>
+            <div id="user-dropdown-menu" class="dropdown-menu">
+              <div class="dropdown-header">
+                <p class="text-sm font-medium" id="user-name">User</p>
+                <p class="text-xs text-gray-500" id="user-email">user@demo.com</p>
+              </div>
+              <div class="dropdown-divider"></div>
+              <a href="settings.html" class="dropdown-item">
+                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                Profile Settings
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#" data-logout class="dropdown-item danger">
+                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                  <polyline points="16 17 21 12 16 7"></polyline>
+                  <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Log out
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Area -->
+      <main class="content-area space-y-6">
+        <!-- Page Header -->
+        <div>
+          <h1 class="text-3xl font-bold text-gray-900">Settings</h1>
+          <p class="text-gray-600 mt-1">Manage your account settings and preferences</p>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="card">
+          <div class="settings-tabs">
+            <button class="settings-tab active" onclick="switchSettingsTab('profile', event)">Profile</button>
+            <button class="settings-tab" onclick="switchSettingsTab('security', event)">Security</button>
+            <button class="settings-tab" onclick="switchSettingsTab('notifications', event)">Notifications</button>
+            <button class="settings-tab" onclick="switchSettingsTab('preferences', event)">Preferences</button>
+          </div>
+
+          <!-- Tab Content -->
+          <div class="card-content">
+            <!-- Profile Tab -->
+            <div id="profile-tab" class="tab-content active">
+              <div class="space-y-6">
+                <!-- Personal Information -->
+                <div>
+                  <div class="flex items-center gap-2 mb-4">
+                    <svg class="h-5 w-5 text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                      fill="none" stroke="currentColor">
+                      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <h3 class="text-lg font-semibold text-gray-900">Personal Information</h3>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-4">Update your personal details and contact information</p>
+
+                  <form class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div class="form-group">
+                        <label class="label">First Name</label>
+                        <input type="text" class="input" id="first-name" value="John">
+                      </div>
+                      <div class="form-group">
+                        <label class="label">Last Name</label>
+                        <input type="text" class="input" id="last-name" value="Doe">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="label">Email Address</label>
+                      <div class="relative">
+                        <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400"
+                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                          <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                          <path d="m2 7 10 7 10-7"></path>
+                        </svg>
+                        <input type="email" class="input pl-10" id="email" value="user@demo.com">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="label">Phone Number</label>
+                      <div class="relative">
+                        <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400"
+                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                          <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                          </path>
+                        </svg>
+                        <input type="tel" class="input pl-10" id="phone" value="+1 (555) 123-4567">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="label">Employee ID</label>
+                      <div class="relative">
+                        <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400"
+                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                          <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                          <path d="M7 8h.01M7 12h.01M7 16h.01M11 8h6M11 12h6M11 16h6"></path>
+                        </svg>
+                        <input type="text" class="input pl-10" value="EMP-2024-001" disabled>
+                      </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                  </form>
+                </div>
+
+                <!-- Employment Details -->
+                <div class="pt-6 border-t border-gray-200">
+                  <div class="flex items-center gap-2 mb-4">
+                    <svg class="h-5 w-5 text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                      fill="none" stroke="currentColor">
+                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                    <h3 class="text-lg font-semibold text-gray-900">Employment Details</h3>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-4">Your current employment information</p>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <p class="text-sm text-gray-600 mb-1">Position</p>
+                      <p class="font-semibold text-gray-900">Paramedic Staff</p>
+                    </div>
+                    <div>
+                      <p class="text-sm text-gray-600 mb-1">Department</p>
+                      <p class="font-semibold text-gray-900">Emergency Services</p>
+                    </div>
+                    <div>
+                      <p class="text-sm text-gray-600 mb-1">Start Date</p>
+                      <div class="flex items-center gap-2">
+                        <svg class="h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                          fill="none" stroke="currentColor">
+                          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                          <line x1="16" y1="2" x2="16" y2="6"></line>
+                          <line x1="8" y1="2" x2="8" y2="6"></line>
+                          <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <p class="font-semibold text-gray-900">January 15, 2024</p>
+                      </div>
+                    </div>
+                    <div>
+                      <p class="text-sm text-gray-600 mb-1">Employment Type</p>
+                      <p class="font-semibold text-gray-900">Full-time Contract</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Security Tab -->
+            <div id="security-tab" class="tab-content">
+              <div class="space-y-6">
+                <!-- Change Password -->
+                <div>
+                  <div class="flex items-center gap-2 mb-4">
+                    <svg class="h-5 w-5 text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                      fill="none" stroke="currentColor">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <h3 class="text-lg font-semibold text-gray-900">Change Password</h3>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-4">Update your password to keep your account secure</p>
+
+                  <form class="space-y-4">
+                    <div class="form-group">
+                      <label class="label">Current Password</label>
+                      <input type="password" class="input" placeholder="Enter current password">
+                    </div>
+                    <div class="form-group">
+                      <label class="label">New Password</label>
+                      <input type="password" class="input" placeholder="Enter new password">
+                    </div>
+                    <div class="form-group">
+                      <label class="label">Confirm New Password</label>
+                      <input type="password" class="input" placeholder="Confirm new password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Change Password</button>
+                  </form>
+                </div>
+
+                <!-- Emergency Contacts -->
+                <div class="pt-6 border-t border-gray-200">
+                  <div class="flex items-center gap-2 mb-4">
+                    <svg class="h-5 w-5 text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                      fill="none" stroke="currentColor">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <h3 class="text-lg font-semibold text-gray-900">Emergency Contacts</h3>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-4">Add emergency contacts for critical situations</p>
+
+                  <form class="space-y-4">
+                    <div class="form-group">
+                      <label class="label">Contact Name</label>
+                      <input type="text" class="input" placeholder="Jane Doe" value="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                      <label class="label">Contact Phone</label>
+                      <input type="tel" class="input" placeholder="+1 (555) 987-6543" value="+1 (555) 987-6543">
+                    </div>
+                    <div class="form-group">
+                      <label class="label">Relationship</label>
+                      <input type="text" class="input" placeholder="Spouse" value="Spouse">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Emergency Contact</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- Notifications Tab -->
+            <div id="notifications-tab" class="tab-content">
+              <div>
+                <div class="flex items-center gap-2 mb-4">
+                  <svg class="h-5 w-5 text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                  </svg>
+                  <h3 class="text-lg font-semibold text-gray-900">Notification Preferences</h3>
+                </div>
+                <p class="text-sm text-gray-600 mb-6">Choose what notifications you want to receive</p>
+
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                    <div>
+                      <p class="font-medium text-gray-900">Case Assignments</p>
+                      <p class="text-sm text-gray-600">Get notified when you are assigned new cases</p>
+                    </div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+
+                  <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                    <div>
+                      <p class="font-medium text-gray-900">Expense Updates</p>
+                      <p class="text-sm text-gray-600">Receive updates on expense approval status</p>
+                    </div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+
+                  <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                    <div>
+                      <p class="font-medium text-gray-900">Form Reminders</p>
+                      <p class="text-sm text-gray-600">Reminders for incomplete forms</p>
+                    </div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+
+                  <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                    <div>
+                      <p class="font-medium text-gray-900">System Updates</p>
+                      <p class="text-sm text-gray-600">Important system announcements and updates</p>
+                    </div>
+                    <label class="toggle-switch">
+                      <input type="checkbox">
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+
+                  <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                    <div>
+                      <p class="font-medium text-gray-900">Email Notifications</p>
+                      <p class="text-sm text-gray-600">Receive notifications via email</p>
+                    </div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Preferences Tab -->
+            <div id="preferences-tab" class="tab-content">
+              <div class="space-y-6">
+                <!-- Location Settings -->
+                <div>
+                  <div class="flex items-center gap-2 mb-4">
+                    <svg class="h-5 w-5 text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                      fill="none" stroke="currentColor">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <h3 class="text-lg font-semibold text-gray-900">Location Settings</h3>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-6">Manage location tracking preferences</p>
+
+                  <div class="space-y-4">
+                    <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                      <div>
+                        <p class="font-medium text-gray-900">Enable Location Tracking</p>
+                        <p class="text-sm text-gray-600">Allow app to track your location for clock in/out</p>
+                      </div>
+                      <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                      </label>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                      <div>
+                        <p class="font-medium text-gray-900">Expense Location Capture</p>
+                        <p class="text-sm text-gray-600">Automatically capture location when submitting expenses</p>
+                      </div>
+                      <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                      </label>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                      <div>
+                        <p class="font-medium text-gray-900">Background Location</p>
+                        <p class="text-sm text-gray-600">Track location even when app is in background</p>
+                      </div>
+                      <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="toggle-slider"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Display Preferences -->
+                <div class="pt-6 border-t border-gray-200">
+                  <div class="flex items-center gap-2 mb-4">
+                    <svg class="h-5 w-5 text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                      fill="none" stroke="currentColor">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                      <line x1="8" y1="21" x2="16" y2="21"></line>
+                      <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                    <h3 class="text-lg font-semibold text-gray-900">Display Preferences</h3>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-6">Customize how the app looks and feels</p>
+
+                  <div class="space-y-4">
+                    <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                      <div>
+                        <p class="font-medium text-gray-900">Dark Mode</p>
+                        <p class="text-sm text-gray-600">Switch to dark theme</p>
+                      </div>
+                      <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="toggle-slider"></span>
+                      </label>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                      <div>
+                        <p class="font-medium text-gray-900">Compact View</p>
+                        <p class="text-sm text-gray-600">Show more content in less space</p>
+                      </div>
+                      <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="toggle-slider"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="utils.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // Settings data structure
+    let settingsData = {
+      profile: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '+1 (555) 123-4567'
+      },
+      emergencyContact: {
+        name: 'Jane Doe',
+        phone: '+1 (555) 987-6543',
+        relationship: 'Spouse'
+      },
+      notifications: {
+        caseAssignments: true,
+        expenseUpdates: true,
+        formReminders: true,
+        systemUpdates: false,
+        emailNotifications: true
+      },
+      preferences: {
+        locationTracking: true,
+        expenseLocation: true,
+        backgroundLocation: false,
+        darkMode: false,
+        compactView: false
+      }
+    };
+
+    function switchSettingsTab(tabName, event) {
+      // Update tab buttons
+      document.querySelectorAll('.settings-tab').forEach(tab => tab.classList.remove('active'));
+      event.target.classList.add('active');
+
+      // Update tab content
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+      document.getElementById(tabName + '-tab').classList.add('active');
+
+      // Save current tab to sessionStorage
+      sessionStorage.setItem('activeSettingsTab', tabName);
+    }
+
+    function loadSettings() {
+      const saved = Utils.loadFromStorage('userSettings');
+      if (saved) {
+        settingsData = { ...settingsData, ...saved };
+      }
+    }
+
+    function saveSettings() {
+      Utils.saveToStorage('userSettings', settingsData);
+    }
+
+    function updateProfile(event) {
+      event.preventDefault();
+
+      const firstName = document.getElementById('first-name').value.trim();
+      const lastName = document.getElementById('last-name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+
+      // Validation
+      if (!firstName || !lastName) {
+        Utils.showToast('Please enter both first and last name', 'error');
+        return;
+      }
+
+      if (!email || !email.includes('@')) {
+        Utils.showToast('Please enter a valid email address', 'error');
+        return;
+      }
+
+      // Update settings
+      settingsData.profile.firstName = firstName;
+      settingsData.profile.lastName = lastName;
+      settingsData.profile.email = email;
+      settingsData.profile.phone = phone;
+
+      // Update user object in localStorage
+      const user = Auth.getCurrentUser();
+      if (user) {
+        user.name = `${firstName} ${lastName}`;
+        user.email = email;
+        localStorage.setItem('user', JSON.stringify(user));
+      }
+
+      saveSettings();
+      Utils.showToast('Profile updated successfully', 'success');
+    }
+
+    function changePassword(event) {
+      event.preventDefault();
+
+      const currentPassword = event.target.querySelector('input[placeholder="Enter current password"]').value;
+      const newPassword = event.target.querySelector('input[placeholder="Enter new password"]').value;
+      const confirmPassword = event.target.querySelector('input[placeholder="Confirm new password"]').value;
+
+      // Validation
+      if (!currentPassword || !newPassword || !confirmPassword) {
+        Utils.showToast('Please fill in all password fields', 'error');
+        return;
+      }
+
+      if (newPassword.length < 6) {
+        Utils.showToast('New password must be at least 6 characters', 'error');
+        return;
+      }
+
+      if (newPassword !== confirmPassword) {
+        Utils.showToast('New passwords do not match', 'error');
+        return;
+      }
+
+      // In a real app, this would verify current password and update
+      Utils.showToast('Password changed successfully', 'success');
+      event.target.reset();
+    }
+
+    function saveEmergencyContact(event) {
+      event.preventDefault();
+
+      const name = event.target.querySelector('input[placeholder="Jane Doe"]').value.trim();
+      const phone = event.target.querySelector('input[placeholder="+1 (555) 987-6543"]').value.trim();
+      const relationship = event.target.querySelector('input[placeholder="Spouse"]').value.trim();
+
+      if (!name || !phone || !relationship) {
+        Utils.showToast('Please fill in all emergency contact fields', 'error');
+        return;
+      }
+
+      settingsData.emergencyContact = { name, phone, relationship };
+      saveSettings();
+      Utils.showToast('Emergency contact saved successfully', 'success');
+    }
+
+    function initializeToggles() {
+      // Notifications toggles
+      const notificationToggles = document.querySelectorAll('#notifications-tab input[type="checkbox"]');
+      const notificationKeys = ['caseAssignments', 'expenseUpdates', 'formReminders', 'systemUpdates', 'emailNotifications'];
+
+      notificationToggles.forEach((toggle, index) => {
+        const key = notificationKeys[index];
+        toggle.checked = settingsData.notifications[key];
+        toggle.addEventListener('change', () => {
+          settingsData.notifications[key] = toggle.checked;
+          saveSettings();
+          Utils.showToast(`Notification preference updated`, 'success');
+        });
+      });
+
+      // Preferences toggles
+      const preferenceToggles = document.querySelectorAll('#preferences-tab input[type="checkbox"]');
+      const preferenceKeys = ['locationTracking', 'expenseLocation', 'backgroundLocation', 'darkMode', 'compactView'];
+
+      preferenceToggles.forEach((toggle, index) => {
+        const key = preferenceKeys[index];
+        toggle.checked = settingsData.preferences[key];
+        toggle.addEventListener('change', () => {
+          settingsData.preferences[key] = toggle.checked;
+          saveSettings();
+          Utils.showToast(`Preference updated`, 'success');
+        });
+      });
+    }
+
+    function populateFormFields() {
+      const user = Auth.getCurrentUser();
+      if (user) {
+        const nameParts = user.name.split(' ');
+        document.getElementById('first-name').value = settingsData.profile.firstName || nameParts[0] || '';
+        document.getElementById('last-name').value = settingsData.profile.lastName || nameParts[1] || '';
+        document.getElementById('email').value = settingsData.profile.email || user.email;
+        document.getElementById('phone').value = settingsData.profile.phone;
+      }
+
+      // Emergency contact
+      const emergencyForm = document.querySelector('#security-tab form:last-of-type');
+      emergencyForm.querySelector('input[placeholder="Jane Doe"]').value = settingsData.emergencyContact.name;
+      emergencyForm.querySelector('input[placeholder="+1 (555) 987-6543"]').value = settingsData.emergencyContact.phone;
+      emergencyForm.querySelector('input[placeholder="Spouse"]').value = settingsData.emergencyContact.relationship;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      Auth.requireAuth();
+      loadSettings();
+      populateFormFields();
+      initializeToggles();
+
+      // Restore active tab
+      const activeTab = sessionStorage.getItem('activeSettingsTab') || 'profile';
+      const tabButton = document.querySelector(`.settings-tab[onclick*="${activeTab}"]`);
+      if (tabButton) {
+        document.querySelectorAll('.settings-tab').forEach(tab => tab.classList.remove('active'));
+        tabButton.classList.add('active');
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+        document.getElementById(activeTab + '-tab').classList.add('active');
+      }
+
+      // Attach form handlers
+      const profileForm = document.querySelector('#profile-tab form');
+      profileForm.addEventListener('submit', updateProfile);
+      profileForm.querySelector('button').addEventListener('click', updateProfile);
+
+      const passwordForm = document.querySelector('#security-tab form:first-of-type');
+      passwordForm.addEventListener('submit', changePassword);
+      passwordForm.querySelector('button').addEventListener('click', changePassword);
+
+      const emergencyForm = document.querySelector('#security-tab form:last-of-type');
+      emergencyForm.addEventListener('submit', saveEmergencyContact);
+      emergencyForm.querySelector('button').addEventListener('click', saveEmergencyContact);
+    });
+  </script>
+
+  <style>
+    .settings-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+    }
+
+    .settings-tab {
+      padding: 1rem 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .settings-tab:hover {
+      color: var(--primary);
+      background-color: var(--gray-50);
+    }
+
+    .settings-tab.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--gray-300);
+      transition: 0.3s;
+      border-radius: 24px;
+    }
+
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.3s;
+      border-radius: 50%;
+    }
+
+    .toggle-switch input:checked+.toggle-slider {
+      background-color: var(--primary);
+    }
+
+    .toggle-switch input:checked+.toggle-slider:before {
+      transform: translateX(20px);
+    }
+
+    @media (max-width: 1023px) {
+      #mobile-menu-btn {
+        display: inline-flex !important;
+      }
+    }
+  </style>
+</body>
+
+</html>

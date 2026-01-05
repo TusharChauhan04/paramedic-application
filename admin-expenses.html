@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Management - Air Medical 24x7</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+
+<body>
+    <div class="min-h-screen" style="background: rgb(250, 245, 255);">
+        <div class="sidebar" style="background: rgb(250, 245, 255);">
+            <div class="sidebar-logo"><img src="assets/air-medical-logo.png" alt="Air Medical 24x7"
+                    onerror="this.style.display='none'"></div>
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="admin-sidebar-link"><svg class="icon"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>Dashboard</a>
+                <a href="admin-users.html" class="admin-sidebar-link"><svg class="icon"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>User Management</a>
+                <a href="admin-cases.html" class="admin-sidebar-link"><svg class="icon"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>All Cases</a>
+                <a href="admin-expenses.html" class="admin-sidebar-link active"><svg class="icon"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>Expenses</a>
+                <a href="admin-locations.html" class="admin-sidebar-link"><svg class="icon"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>Locations</a>
+            </nav>
+        </div>
+
+        <div class="admin-main-content">
+            <header class="header" style="background: white; border-bottom-color: rgb(233, 213, 255);">
+                <div class="flex-1 flex items-center"><button type="button" id="mobile-menu-btn"
+                        class="btn-icon btn-ghost" style="display: none;"><svg class="icon"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg></button></div>
+                <div class="header-actions">
+                    <button class="btn-icon btn-ghost notification-btn"><svg class="icon"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg><span class="notification-badge"></span></button>
+                    <div class="user-dropdown">
+                        <button id="user-dropdown-btn" class="user-btn">
+                            <div class="user-avatar" style="background-color: rgb(107, 33, 168);">AU</div><span
+                                class="hidden md:block text-sm font-medium text-gray-700">Admin</span>
+                        </button>
+                        <div id="user-dropdown-menu" class="dropdown-menu">
+                            <div class="dropdown-header">
+                                <p class="text-sm font-medium">Admin User</p>
+                                <p class="text-xs text-gray-500">admin@demo.com</p>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" data-logout class="dropdown-item danger"><svg class="icon-sm"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                    <polyline points="16 17 21 12 16 7"></polyline>
+                                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                                </svg>Log out</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="content-area space-y-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Expense Management</h1>
+                    <p class="text-gray-600 mt-1">Review and approve staff expense submissions</p>
+                </div>
+
+                <!-- Statistics -->
+                <div class="flex gap-4 overflow-x-auto pb-2">
+                    <div class="card" style="border-color: rgb(233, 213, 255); flex: 1 1 0; min-width: 200px;">
+                        <div class="card-header flex flex-row items-center justify-between"
+                            style="padding-bottom: 0.5rem;">
+                            <div class="text-sm font-medium text-gray-600">Pending</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="text-2xl font-bold text-gray-900" id="pending-count">0</div>
+                            <p class="text-xs text-gray-500 mt-1" id="pending-amount">AED 0.00</p>
+                        </div>
+                    </div>
+                    <div class="card" style="border-color: rgb(233, 213, 255); flex: 1 1 0; min-width: 200px;">
+                        <div class="card-header flex flex-row items-center justify-between"
+                            style="padding-bottom: 0.5rem;">
+                            <div class="text-sm font-medium text-gray-600">Approved</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="text-2xl font-bold text-gray-900" id="approved-count">0</div>
+                            <p class="text-xs text-gray-500 mt-1" id="approved-amount">AED 0.00</p>
+                        </div>
+                    </div>
+                    <div class="card" style="border-color: rgb(233, 213, 255); flex: 1 1 0; min-width: 200px;">
+                        <div class="card-header flex flex-row items-center justify-between"
+                            style="padding-bottom: 0.5rem;">
+                            <div class="text-sm font-medium text-gray-600">Rejected</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="text-2xl font-bold text-gray-900" id="rejected-count">0</div>
+                            <p class="text-xs text-gray-500 mt-1" id="rejected-amount">AED 0.00</p>
+                        </div>
+                    </div>
+                    <div class="card" style="border-color: rgb(233, 213, 255); flex: 1 1 0; min-width: 200px;">
+                        <div class="card-header flex flex-row items-center justify-between"
+                            style="padding-bottom: 0.5rem;">
+                            <div class="text-sm font-medium text-gray-600">Total</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="text-2xl font-bold text-gray-900" id="total-count">0</div>
+                            <p class="text-xs text-gray-500 mt-1" id="total-amount">AED 0.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="flex gap-2 border-b border-gray-200">
+                    <button class="tab-btn active" onclick="switchTab('pending')">Pending</button>
+                    <button class="tab-btn" onclick="switchTab('approved')">Approved</button>
+                    <button class="tab-btn" onclick="switchTab('rejected')">Rejected</button>
+                    <button class="tab-btn" onclick="switchTab('all')">All</button>
+                </div>
+
+                <!-- Expenses List -->
+                <div id="expenses-list" class="space-y-4"></div>
+            </main>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="utils.js"></script>
+    <script src="app.js"></script>
+    <script>
+        let expenses = [];
+        let activeTab = 'pending';
+
+        function loadExpenses() {
+            expenses = Utils.loadFromStorage('expenses', []);
+        }
+
+        function updateStatistics() {
+            const pending = expenses.filter(e => e.status === 'pending');
+            const approved = expenses.filter(e => e.status === 'approved');
+            const rejected = expenses.filter(e => e.status === 'rejected');
+
+            document.getElementById('pending-count').textContent = pending.length;
+            document.getElementById('pending-amount').textContent = Utils.formatCurrency(pending.reduce((sum, e) => sum + e.amount, 0));
+
+            document.getElementById('approved-count').textContent = approved.length;
+            document.getElementById('approved-amount').textContent = Utils.formatCurrency(approved.reduce((sum, e) => sum + e.amount, 0));
+
+            document.getElementById('rejected-count').textContent = rejected.length;
+            document.getElementById('rejected-amount').textContent = Utils.formatCurrency(rejected.reduce((sum, e) => sum + e.amount, 0));
+
+            document.getElementById('total-count').textContent = expenses.length;
+            document.getElementById('total-amount').textContent = Utils.formatCurrency(expenses.reduce((sum, e) => sum + e.amount, 0));
+        }
+
+        function switchTab(tab) {
+            activeTab = tab;
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderExpenses();
+        }
+
+        function renderExpenses() {
+            const container = document.getElementById('expenses-list');
+            let filtered = expenses;
+
+            if (activeTab !== 'all') {
+                filtered = expenses.filter(e => e.status === activeTab);
+            }
+
+            if (filtered.length === 0) {
+                container.innerHTML = '<div class="card" style="border-color: rgb(233, 213, 255);"><div class="card-content text-center py-12"><p class="text-gray-500">No expenses found in this category</p></div></div>';
+                return;
+            }
+
+            container.innerHTML = filtered.map(expense => `
+        <div class="card" style="border-color: rgb(233, 213, 255);">
+          <div class="card-content">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+              <div class="flex-1">
+                <div class="flex items-center gap-2 flex-wrap mb-2">
+                  <span class="font-semibold text-gray-900">${expense.id || 'N/A'}</span>
+                  <span class="badge ${expense.status === 'approved' ? 'badge-success' : expense.status === 'rejected' ? 'badge-danger' : 'badge-default'}">${expense.status}</span>
+                  ${expense.receipt ? '<span class="badge badge-primary">Receipt</span>' : ''}
+                </div>
+                <p class="text-2xl font-bold text-gray-900 mb-2">${Utils.formatCurrency(expense.amount)}</p>
+                <p class="text-sm text-gray-600 mb-2">${expense.description}</p>
+                <div class="flex items-center gap-4 text-xs text-gray-500 flex-wrap">
+                  <span>📅 ${expense.date}</span>
+                  <span>📍 ${expense.location || 'N/A'}</span>
+                  <span>🏷️ ${expense.category}</span>
+                  ${expense.caseName ? `<span>📋 ${expense.caseName}</span>` : ''}
+                </div>
+              </div>
+              ${expense.status === 'pending' ? `
+                <div class="flex gap-2">
+                  <button class="btn btn-outline btn-sm" style="color: rgb(34, 197, 94); border-color: rgb(34, 197, 94);" onclick="approveExpense('${expense.id}')">Approve</button>
+                  <button class="btn btn-outline btn-sm" style="color: rgb(220, 38, 38); border-color: rgb(220, 38, 38);" onclick="rejectExpense('${expense.id}')">Reject</button>
+                </div>
+              ` : ''}
+            </div>
+          </div>
+        </div>
+      `).join('');
+        }
+
+        function approveExpense(id) {
+            const index = expenses.findIndex(e => e.id === id);
+            if (index !== -1) {
+                expenses[index].status = 'approved';
+                expenses[index].approvedAt = new Date().toISOString();
+                Utils.saveToStorage('expenses', expenses);
+                updateStatistics();
+                renderExpenses();
+                Utils.showToast('Expense approved successfully', 'success');
+            }
+        }
+
+        function rejectExpense(id) {
+            const index = expenses.findIndex(e => e.id === id);
+            if (index !== -1) {
+                expenses[index].status = 'rejected';
+                expenses[index].rejectedAt = new Date().toISOString();
+                Utils.saveToStorage('expenses', expenses);
+                updateStatistics();
+                renderExpenses();
+                Utils.showToast('Expense rejected', 'success');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            Auth.requireAuth(true);
+            loadExpenses();
+            updateStatistics();
+            renderExpenses();
+        });
+    </script>
+    <style>
+        @media (max-width: 1023px) {
+            #mobile-menu-btn {
+                display: inline-flex !important;
+            }
+        }
+    </style>
+</body>
+
+</html>

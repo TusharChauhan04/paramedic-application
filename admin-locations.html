@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Locations - Air Medical 24x7</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+
+<body>
+    <div class="min-h-screen" style="background: rgb(250, 245, 255);">
+        <div class="sidebar" style="background: rgb(250, 245, 255);">
+            <div class="sidebar-logo"><img src="assets/air-medical-logo.png" alt="Air Medical 24x7"
+                    onerror="this.style.display='none'"></div>
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="admin-sidebar-link"><svg class="icon"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>Dashboard</a>
+                <a href="admin-users.html" class="admin-sidebar-link"><svg class="icon"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>User Management</a>
+                <a href="admin-cases.html" class="admin-sidebar-link"><svg class="icon"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>All Cases</a>
+                <a href="admin-expenses.html" class="admin-sidebar-link"><svg class="icon"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>Expenses</a>
+                <a href="admin-locations.html" class="admin-sidebar-link active"><svg class="icon"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>Locations</a>
+            </nav>
+        </div>
+
+        <div class="admin-main-content">
+            <header class="header" style="background: white; border-bottom-color: rgb(233, 213, 255);">
+                <div class="flex-1 flex items-center"><button type="button" id="mobile-menu-btn"
+                        class="btn-icon btn-ghost" style="display: none;"><svg class="icon"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg></button></div>
+                <div class="header-actions">
+                    <button class="btn-icon btn-ghost notification-btn"><svg class="icon"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg><span class="notification-badge"></span></button>
+                    <div class="user-dropdown">
+                        <button id="user-dropdown-btn" class="user-btn">
+                            <div class="user-avatar" style="background-color: rgb(107, 33, 168);">AU</div><span
+                                class="hidden md:block text-sm font-medium text-gray-700">Admin</span>
+                        </button>
+                        <div id="user-dropdown-menu" class="dropdown-menu">
+                            <div class="dropdown-header">
+                                <p class="text-sm font-medium">Admin User</p>
+                                <p class="text-xs text-gray-500">admin@demo.com</p>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" data-logout class="dropdown-item danger"><svg class="icon-sm"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                    <polyline points="16 17 21 12 16 7"></polyline>
+                                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                                </svg>Log out</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="content-area space-y-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Staff Location Tracking</h1>
+                    <p class="text-gray-600 mt-1">Monitor staff locations and activity</p>
+                </div>
+
+                <!-- Statistics -->
+                <div class="flex gap-4 overflow-x-auto pb-2">
+                    <div class="card" style="border-color: rgb(233, 213, 255); flex: 1 1 0; min-width: 200px;">
+                        <div class="card-header flex flex-row items-center justify-between"
+                            style="padding-bottom: 0.5rem;">
+                            <div class="text-sm font-medium text-gray-600">Total Staff</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="text-2xl font-bold text-gray-900" id="total-staff">0</div>
+                            <p class="text-xs text-gray-500 mt-1">Active users</p>
+                        </div>
+                    </div>
+                    <div class="card" style="border-color: rgb(233, 213, 255); flex: 1 1 0; min-width: 200px;">
+                        <div class="card-header flex flex-row items-center justify-between"
+                            style="padding-bottom: 0.5rem;">
+                            <div class="text-sm font-medium text-gray-600">Clocked In</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="text-2xl font-bold text-gray-900" id="clocked-in">0</div>
+                            <p class="text-xs text-gray-500 mt-1">On duty now</p>
+                        </div>
+                    </div>
+                    <div class="card" style="border-color: rgb(233, 213, 255); flex: 1 1 0; min-width: 200px;">
+                        <div class="card-header flex flex-row items-center justify-between"
+                            style="padding-bottom: 0.5rem;">
+                            <div class="text-sm font-medium text-gray-600">Location Updates</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="text-2xl font-bold text-gray-900" id="location-updates">0</div>
+                            <p class="text-xs text-gray-500 mt-1">Total events</p>
+                        </div>
+                    </div>
+                    <div class="card" style="border-color: rgb(233, 213, 255); flex: 1 1 0; min-width: 200px;">
+                        <div class="card-header flex flex-row items-center justify-between"
+                            style="padding-bottom: 0.5rem;">
+                            <div class="text-sm font-medium text-gray-600">Last Update</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="text-sm font-bold text-gray-900" id="last-update">N/A</div>
+                            <p class="text-xs text-gray-500 mt-1">Most recent</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Staff Status -->
+                <div class="card" style="border-color: rgb(233, 213, 255);">
+                    <div class="card-header">
+                        <div class="card-title">Current Staff Status</div>
+                        <div class="card-description">Real-time clock-in status</div>
+                    </div>
+                    <div class="card-content">
+                        <div id="staff-status" class="space-y-3"></div>
+                    </div>
+                </div>
+
+                <!-- Recent Location Activity -->
+                <div class="card" style="border-color: rgb(233, 213, 255);">
+                    <div class="card-header">
+                        <div class="card-title">Recent Location Activity</div>
+                        <div class="card-description">Latest location updates from all staff</div>
+                    </div>
+                    <div class="card-content">
+                        <div id="location-activity" class="space-y-3"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="utils.js"></script>
+    <script src="app.js"></script>
+    <script>
+        const mockStaff = [
+            { id: 1, name: 'John Doe', email: 'user@demo.com', clockedIn: true },
+            { id: 2, name: 'Jane Smith', email: 'jane@demo.com', clockedIn: true },
+            { id: 3, name: 'Mike Johnson', email: 'mike@demo.com', clockedIn: false },
+            { id: 4, name: 'Sarah Williams', email: 'sarah@demo.com', clockedIn: true },
+        ];
+
+        function updateStatistics() {
+            const locationHistory = Utils.loadFromStorage('locationHistory', []);
+            const clockedIn = mockStaff.filter(s => s.clockedIn).length;
+
+            document.getElementById('total-staff').textContent = mockStaff.length;
+            document.getElementById('clocked-in').textContent = clockedIn;
+            document.getElementById('location-updates').textContent = locationHistory.length;
+
+            if (locationHistory.length > 0) {
+                const latest = locationHistory[locationHistory.length - 1];
+                const date = new Date(latest.timestamp);
+                document.getElementById('last-update').textContent = date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+            }
+        }
+
+        function renderStaffStatus() {
+            const container = document.getElementById('staff-status');
+
+            container.innerHTML = mockStaff.map(staff => `
+        <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+          <div class="flex items-center gap-3">
+            <div class="user-avatar" style="background-color: ${staff.clockedIn ? 'rgb(34, 197, 94)' : 'rgb(156, 163, 175)'};">${staff.name.split(' ').map(n => n[0]).join('')}</div>
+            <div>
+              <p class="text-sm font-medium text-gray-900">${staff.name}</p>
+              <p class="text-xs text-gray-500">${staff.email}</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="badge ${staff.clockedIn ? 'badge-success' : 'badge-default'}">${staff.clockedIn ? 'On Duty' : 'Off Duty'}</span>
+            ${staff.clockedIn ? '<svg class="h-5 w-5 text-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>' : ''}
+          </div>
+        </div>
+      `).join('');
+        }
+
+        function renderLocationActivity() {
+            const container = document.getElementById('location-activity');
+            const locationHistory = Utils.loadFromStorage('locationHistory', []);
+
+            if (locationHistory.length === 0) {
+                container.innerHTML = '<div class="text-center py-8"><p class="text-gray-500">No location activity yet</p></div>';
+                return;
+            }
+
+            const sortedHistory = [...locationHistory].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp)).slice(0, 10);
+
+            container.innerHTML = sortedHistory.map(item => {
+                const date = new Date(item.timestamp);
+                const formattedDate = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                const formattedTime = date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+
+                return `
+          <div class="flex items-start gap-4 p-4 border border-gray-200 rounded-lg">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full ${item.type === 'Clock In' ? 'bg-green-100' : 'bg-red-100'} flex items-center justify-center">
+              <svg class="h-5 w-5 ${item.type === 'Clock In' ? 'text-green-600' : 'text-red-600'}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                ${item.type === 'Clock In' ? '<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line>' : '<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line>'}
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-1">
+                <p class="font-medium text-gray-900">${item.type}</p>
+                <span class="badge ${item.type === 'Clock In' ? 'badge-success' : 'badge-danger'}">${item.type}</span>
+              </div>
+              <p class="text-sm text-gray-600">${formattedDate} at ${formattedTime}</p>
+              ${item.location ? `
+                <div class="flex items-center gap-1 mt-2 text-xs text-gray-500">
+                  <svg class="h-3 w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>${item.location.latitude.toFixed(6)}° N, ${item.location.longitude.toFixed(6)}° E</span>
+                </div>
+              ` : ''}
+            </div>
+          </div>
+        `;
+            }).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            Auth.requireAuth(true);
+            updateStatistics();
+            renderStaffStatus();
+            renderLocationActivity();
+        });
+    </script>
+    <style>
+        @media (max-width: 1023px) {
+            #mobile-menu-btn {
+                display: inline-flex !important;
+            }
+        }
+    </style>
+</body>
+
+</html>

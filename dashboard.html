@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Air Medical 24x7</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+
+<body>
+    <div class="min-h-screen bg-gray-50">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <img src="assets/air-medical-logo.png" alt="Air Medical 24x7" onerror="this.style.display='none'">
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link active">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    Dashboard
+                </a>
+                <a href="cases.html" class="sidebar-link">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    Cases & Forms
+                </a>
+                <a href="expenses.html" class="sidebar-link">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    Expenses
+                </a>
+                <a href="location.html" class="sidebar-link">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Location Tracking
+                </a>
+                <a href="settings.html" class="sidebar-link">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M12 1v6m0 6v6m5.196-15.804L13.464 7.46m-3.392 9.08-3.732 3.732m15.804-5.195L17.54 13.464m-9.08-3.392-3.732-3.732">
+                        </path>
+                    </svg>
+                    Settings
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="flex-1 flex items-center">
+                    <button type="button" id="mobile-menu-btn" class="btn-icon btn-ghost" style="display: none;">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-icon btn-ghost notification-btn">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-badge"></span>
+                    </button>
+                    <div class="user-dropdown">
+                        <button id="user-dropdown-btn" class="user-btn">
+                            <div class="user-avatar" id="user-avatar">JD</div>
+                            <span class="hidden md:block text-sm font-medium text-gray-700"
+                                id="user-display-name">User</span>
+                        </button>
+                        <div id="user-dropdown-menu" class="dropdown-menu">
+                            <div class="dropdown-header">
+                                <p class="text-sm font-medium" id="user-name">User</p>
+                                <p class="text-xs text-gray-500" id="user-email">user@demo.com</p>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="settings.html" class="dropdown-item">
+                                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor">
+                                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                Profile Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" data-logout class="dropdown-item danger">
+                                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor">
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                    <polyline points="16 17 21 12 16 7"></polyline>
+                                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                                </svg>
+                                Log out
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <main class="content-area space-y-6">
+                <!-- Page Header -->
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-900">Dashboard</h1>
+                        <p class="text-gray-600 mt-1">Welcome back, <span id="welcome-name">John Doe</span></p>
+                    </div>
+                    <div class="flex flex-col items-end">
+                        <span class="text-sm text-gray-600">Current time</span>
+                        <span class="text-2xl font-bold text-gray-900" id="current-time">12:00:00 PM</span>
+                    </div>
+                </div>
+
+                <!-- SOS Emergency Alert (Shows when SOS is triggered) -->
+                <div id="sos-alert" class="hidden"
+                    style="background-color: rgb(254, 242, 242); border: 1px solid rgb(239, 68, 68); border-radius: 0.5rem; padding: 1rem;">
+                    <div class="flex items-start gap-3">
+                        <svg class="h-5 w-5 text-red-600 flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-red-900">Emergency Alert Activated</h4>
+                            <p class="text-sm text-red-800 mt-1">Emergency services have been notified. Your supervisor
+                                and nearby team members will be alerted with your current location.</p>
+                            <button class="btn btn-outline btn-sm mt-2"
+                                style="border-color: rgb(239, 68, 68); color: rgb(239, 68, 68); background: transparent;"
+                                onclick="dismissSOS()">Dismiss</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clock In/Out Card -->
+                <div class="card"
+                    style="background: linear-gradient(to right, rgb(37, 99, 235), rgb(29, 78, 216)); border-color: rgb(191, 219, 254); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);">
+                    <div class="card-content" style="padding: 1.5rem 2rem;">
+                        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                            <div style="color: white;">
+                                <h2 class="text-2xl font-bold mb-2">Ready to start your day?</h2>
+                                <p class="text-blue-100" id="clock-status">Clock in to track your attendance</p>
+                            </div>
+                            <div class="flex gap-3">
+                                <button id="clock-btn" class="btn btn-lg"
+                                    style="background: white; color: rgb(37, 99, 235); font-weight: 600; height: 3rem; padding: 0 1.5rem;"
+                                    onclick="toggleClock()">
+                                    <svg class="mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                                        <polyline points="10 17 15 12 10 7"></polyline>
+                                        <line x1="15" y1="12" x2="3" y2="12"></line>
+                                    </svg>
+                                    <span id="clock-btn-text">Clock In</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Assistance Card (Always visible) -->
+                <div class="card" style="background-color: rgb(254, 242, 242); border-color: rgb(254, 202, 202);">
+                    <div class="card-content" style="padding: 1.5rem;">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                            <div>
+                                <h3 class="text-lg font-semibold text-red-900 mb-1">Emergency Assistance</h3>
+                                <p class="text-sm text-red-700">Press the SOS button if you need immediate emergency
+                                    support</p>
+                            </div>
+                            <button class="btn"
+                                style="background-color: rgb(220, 38, 38); color: white; font-weight: 700; height: 3.5rem; padding: 0 2rem; font-size: 1.125rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);"
+                                onclick="triggerSOS()">
+                                <svg class="mr-2 h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg>
+                                SOS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Grid -->
+                <div class="flex gap-4 overflow-x-auto pb-2">
+                    <div class="card" style="flex: 1 1 0; min-width: 200px;">
+                        <div class="card-header flex flex-row items-center justify-between"
+                            style="padding-bottom: 0.5rem; padding-top: 1rem;">
+                            <div class="text-sm font-medium text-gray-600">Total Cases</div>
+                            <svg class="h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                        </div>
+                        <div class="card-content" style="padding-top: 0;">
+                            <div class="text-2xl font-bold text-gray-900">24</div>
+                            <p class="text-xs text-gray-500 mt-1">Assigned this month</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="flex: 1 1 0; min-width: 200px;">
+                        <div class="card-header flex flex-row items-center justify-between"
+                            style="padding-bottom: 0.5rem; padding-top: 1rem;">
+                            <div class="text-sm font-medium text-gray-600">Completed</div>
+                            <svg class="h-4 w-4 text-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <div class="card-content" style="padding-top: 0;">
+                            <div class="text-2xl font-bold text-gray-900">18</div>
+                            <p class="text-xs text-gray-500 mt-1">75% completion rate</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="flex: 1 1 0; min-width: 200px;">
+                        <div class="card-header flex flex-row items-center justify-between"
+                            style="padding-bottom: 0.5rem; padding-top: 1rem;">
+                            <div class="text-sm font-medium text-gray-600">Pending</div>
+                            <svg class="h-4 w-4 text-orange-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                        </div>
+                        <div class="card-content" style="padding-top: 0;">
+                            <div class="text-2xl font-bold text-gray-900">3</div>
+                            <p class="text-xs text-gray-500 mt-1">Requires attention</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="flex: 1 1 0; min-width: 200px;">
+                        <div class="card-header flex flex-row items-center justify-between"
+                            style="padding-bottom: 0.5rem; padding-top: 1rem;">
+                            <div class="text-sm font-medium text-gray-600">On Hold</div>
+                            <svg class="h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="10" y1="15" x2="10" y2="9"></line>
+                                <line x1="14" y1="15" x2="14" y2="9"></line>
+                            </svg>
+                        </div>
+                        <div class="card-content" style="padding-top: 0;">
+                            <div class="text-2xl font-bold text-gray-900">3</div>
+                            <p class="text-xs text-gray-500 mt-1">Awaiting updates</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pending Cases -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Pending Cases</div>
+                        <div class="card-description">Cases assigned to you that require attention</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="space-y-4" id="pending-cases-list">
+                            <!-- Cases will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="utils.js"></script>
+    <script src="app.js"></script>
+    <script>
+        let isClockedIn = false;
+        let clockInTime = null;
+
+        const pendingCases = [
+            { id: 'C-2024-001', patient: 'Michael Johnson', type: 'Home Visit', priority: 'High', assignedDate: '2024-12-15' },
+            { id: 'C-2024-002', patient: 'Sarah Williams', type: 'Follow-up', priority: 'Medium', assignedDate: '2024-12-16' },
+            { id: 'C-2024-003', patient: 'Robert Brown', type: 'Assessment', priority: 'High', assignedDate: '2024-12-16' }
+        ];
+
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            document.getElementById('current-time').textContent = timeString;
+        }
+
+        async function toggleClock() {
+            const btn = document.getElementById('clock-btn');
+            const btnText = document.getElementById('clock-btn-text');
+            const statusText = document.getElementById('clock-status');
+
+            if (!isClockedIn) {
+                try {
+                    const location = await Utils.getGeolocation();
+                    clockInTime = new Date();
+                    const clockInData = {
+                        isClockedIn: true,
+                        clockInTime: clockInTime.toISOString(),
+                        location: location
+                    };
+                    Utils.saveToStorage('clockInStatus', clockInData);
+
+                    const history = Utils.loadFromStorage('locationHistory', []);
+                    history.push({
+                        type: 'Clock In',
+                        timestamp: clockInTime.toISOString(),
+                        location: location
+                    });
+                    Utils.saveToStorage('locationHistory', history);
+
+                    isClockedIn = true;
+                    btnText.textContent = 'Clock Out';
+                    btn.style.background = 'transparent';
+                    btn.style.color = 'white';
+                    btn.style.border = '2px solid white';
+                    statusText.textContent = `Clocked in at ${clockInTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}`;
+
+                    Utils.showToast('Clocked in successfully', 'success');
+                } catch (err) {
+                    Utils.showToast('Please enable location services', 'error');
+                }
+            } else {
+                try {
+                    const location = await Utils.getGeolocation();
+                    const clockOutData = {
+                        isClockedIn: false,
+                        clockOutTime: new Date().toISOString(),
+                        location: location
+                    };
+                    Utils.saveToStorage('clockInStatus', clockOutData);
+
+                    const history = Utils.loadFromStorage('locationHistory', []);
+                    history.push({
+                        type: 'Clock Out',
+                        timestamp: new Date().toISOString(),
+                        location: location
+                    });
+                    Utils.saveToStorage('locationHistory', history);
+
+                    isClockedIn = false;
+                    clockInTime = null;
+                    btnText.textContent = 'Clock In';
+                    btn.style.background = 'white';
+                    btn.style.color = 'rgb(37, 99, 235)';
+                    btn.style.border = 'none';
+                    statusText.textContent = 'Clock in to track your attendance';
+
+                    Utils.showToast('Clocked out successfully', 'success');
+                } catch (err) {
+                    Utils.showToast('Error clocking out', 'error');
+                }
+            }
+        }
+
+        function triggerSOS() {
+            // Show the SOS alert
+            document.getElementById('sos-alert').classList.remove('hidden');
+            Utils.showToast('🚨 SOS ALERT TRIGGERED! Emergency services notified.', 'error');
+            console.log('SOS ALERT ACTIVATED');
+        }
+
+        function dismissSOS() {
+            document.getElementById('sos-alert').classList.add('hidden');
+        }
+
+        function renderPendingCases() {
+            const container = document.getElementById('pending-cases-list');
+            container.innerHTML = pendingCases.map(caseItem => `
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:border-blue-300 transition-colors" style="background-color: rgba(239, 246, 255, 0.5);">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="font-semibold text-gray-900">${caseItem.id}</span>
+              <span class="badge ${caseItem.priority === 'High' ? 'badge-danger' : 'badge-default'}">${caseItem.priority}</span>
+            </div>
+            <p class="text-sm text-gray-600">${caseItem.patient} - ${caseItem.type}</p>
+            <p class="text-xs text-gray-500">Assigned: ${caseItem.assignedDate}</p>
+          </div>
+          <a href="cases.html" class="btn btn-outline btn-sm mt-3 sm:mt-0">View Details</a>
+        </div>
+      `).join('');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            Auth.requireAuth();
+            const user = Auth.getCurrentUser();
+            if (user) {
+                document.getElementById('welcome-name').textContent = user.name;
+            }
+
+            // Check clock in status
+            const clockStatus = Utils.loadFromStorage('clockInStatus');
+            if (clockStatus && clockStatus.isClockedIn) {
+                isClockedIn = true;
+                clockInTime = new Date(clockStatus.clockInTime);
+                const btn = document.getElementById('clock-btn');
+                const btnText = document.getElementById('clock-btn-text');
+                const statusText = document.getElementById('clock-status');
+
+                btnText.textContent = 'Clock Out';
+                btn.style.background = 'transparent';
+                btn.style.color = 'white';
+                btn.style.border = '2px solid white';
+                statusText.textContent = `Clocked in at ${clockInTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}`;
+            }
+
+            updateTime();
+            setInterval(updateTime, 1000);
+            renderPendingCases();
+        });
+    </script>
+
+    <style>
+        @media (max-width: 1023px) {
+            #mobile-menu-btn {
+                display: inline-flex !important;
+            }
+        }
+    </style>
+</body>
+
+</html>
