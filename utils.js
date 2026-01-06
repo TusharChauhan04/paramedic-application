@@ -272,7 +272,7 @@ const Utils = {
         const modal = document.getElementById(modalId);
         if (modal) {
             modal.classList.remove('hidden');
-            modal.style.display = 'block';
+            modal.style.display = 'flex';
         }
     },
 

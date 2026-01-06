@@ -1111,6 +1111,8 @@ a:hover {
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  left: 0 !important;
+  margin-left: 0 !important;
 }
 
 .modal-overlay.hidden {
@@ -1191,7 +1193,7 @@ a:hover {
 }
 
 .sidebar-logo img {
-  max-width: 10rem;
+  max-width: 14rem;
   height: auto;
 }
 

@@ -84,9 +84,30 @@
       </header>
 
       <main class="content-area space-y-6">
-        <div>
-          <h1 class="text-3xl font-bold text-gray-900">All Cases</h1>
-          <p class="text-gray-600 mt-1">System-wide case overview and management</p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h1 class="text-3xl font-bold text-gray-900">All Cases</h1>
+            <p class="text-gray-600 mt-1">System-wide case overview and management</p>
+          </div>
+          <div class="flex gap-2">
+            <button class="btn btn-primary" onclick="Utils.showModal('create-case-modal')">
+              <svg class="mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              Create Case
+            </button>
+            <button class="btn btn-outline" onclick="Utils.showModal('upload-cases-modal')">
+              <svg class="mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+              Upload Cases
+            </button>
+          </div>
         </div>
 
         <!-- Statistics -->
@@ -175,6 +196,133 @@
     </div>
   </div>
 
+  <!-- Create Case Modal -->
+  <div id="create-case-modal" class="modal-overlay hidden">
+    <div class="modal" style="max-width: 1000px; max-height: 90vh; padding: 0;">
+      <div class="modal-header" style="padding: 1.5rem;">
+        <div>
+          <div class="modal-title">Create New Case</div>
+          <p class="text-sm text-gray-600 mt-1">Fill out the complete case form below. Submissions are automatically
+            saved.</p>
+        </div>
+        <button class="modal-close" onclick="Utils.hideModal('create-case-modal')">×</button>
+      </div>
+      <div style="height: 75vh; width: 100%;">
+        <iframe src="https://zfrmz.in/Aikuqi5QXsxXDJFNbqT2" style="width: 100%; height: 100%; border: none;"
+          title="Create Case Form" allow="geolocation"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upload Cases Modal -->
+  <div id="upload-cases-modal" class="modal-overlay hidden">
+    <div class="modal modal-large">
+      <div class="modal-header">
+        <div class="modal-title">Upload Cases</div>
+        <button class="modal-close" onclick="Utils.hideModal('upload-cases-modal')">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="p-4 bg-blue-50 border border-blue-200 rounded-lg mb-4">
+          <p class="text-sm text-blue-900 font-medium mb-2">File Format Requirements:</p>
+          <ul class="text-xs text-blue-700 space-y-1 ml-4 list-disc">
+            <li>CSV or Excel file (.csv, .xlsx, .xls)</li>
+            <li>Required columns: Patient Name, Case Type, Priority, Due Date</li>
+            <li>Optional columns: Description, Location, Notes</li>
+          </ul>
+        </div>
+        <form id="upload-cases-form" class="space-y-4">
+          <div class="form-group">
+            <label class="label">Select File *</label>
+            <input type="file" class="input" id="upload-file" accept=".csv,.xlsx,.xls" required>
+          </div>
+          <div class="p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+            <p class="text-xs text-yellow-800">
+              <svg class="h-3 w-3 inline mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              Note: Cases will be validated and processed. You'll receive a notification once the import is complete.
+            </p>
+          </div>
+          <div class="flex gap-2">
+            <button type="submit" class="btn btn-primary flex-1">
+              <svg class="mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+              Upload File
+            </button>
+            <button type="button" class="btn btn-outline flex-1"
+              onclick="Utils.hideModal('upload-cases-modal')">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- View Forms Modal -->
+  <div id="view-forms-modal" class="modal-overlay hidden">
+    <div class="modal modal-large">
+      <div class="modal-header">
+        <div class="modal-title" id="modal-title">Case Forms</div>
+        <button class="modal-close" onclick="Utils.hideModal('view-forms-modal')">×</button>
+      </div>
+      <div class="modal-body" id="modal-forms-list"></div>
+    </div>
+  </div>
+
+  <!-- Add Expense Modal -->
+  <div id="add-expense-modal" class="modal-overlay hidden">
+    <div class="modal modal-large">
+      <div class="modal-header">
+        <div class="modal-title">Add Expense to Case</div>
+        <button class="modal-close" onclick="Utils.hideModal('add-expense-modal')">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="p-3 bg-blue-50 border border-blue-200 rounded-lg mb-4">
+          <p class="text-sm text-blue-900 font-medium" id="expense-case-info">This expense will be linked to the
+            selected case</p>
+        </div>
+        <form id="add-expense-form" class="space-y-4">
+          <div class="form-group">
+            <label class="label">Category *</label>
+            <select class="select" id="expense-category" required>
+              <option value="">Select category</option>
+              <option value="Travel">Travel</option>
+              <option value="Meals">Meals</option>
+              <option value="Medical Supplies">Medical Supplies</option>
+              <option value="Equipment">Equipment</option>
+              <option value="Parking">Parking</option>
+              <option value="Accommodation">Accommodation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="label">Amount (AED) *</label>
+            <input type="number" class="input" id="expense-amount" step="0.01" placeholder="0.00" required>
+          </div>
+          <div class="form-group">
+            <label class="label">Description *</label>
+            <textarea class="textarea" id="expense-description" rows="3" placeholder="Enter expense details..."
+              required></textarea>
+          </div>
+          <div class="form-group">
+            <label class="label">Date *</label>
+            <input type="date" class="input" id="expense-date" required>
+          </div>
+          <div class="flex gap-2">
+            <button type="submit" class="btn btn-primary flex-1">Submit Expense</button>
+            <button type="button" class="btn btn-outline flex-1"
+              onclick="Utils.hideModal('add-expense-modal')">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <script src="auth.js"></script>
   <script src="utils.js"></script>
   <script src="app.js"></script>
@@ -242,7 +390,7 @@
         return `
           <div class="card" style="border-color: rgb(233, 213, 255);">
             <div class="card-content">
-              <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-4">
+              <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 1rem;">
                 <div class="flex-1">
                   <div class="flex items-center gap-2 flex-wrap mb-2">
                     <span class="font-semibold text-gray-900">${caseItem.id}</span>
@@ -266,6 +414,16 @@
                     </div>
                   </div>
                 </div>
+                <div style="display: flex; gap: 0.5rem; flex-shrink: 0;">
+                  <button class="btn btn-outline btn-sm" onclick="viewCaseForms('${caseItem.id}')">
+                    <svg class="mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    View Forms
+                  </button>
+                  <button class="btn btn-outline btn-sm" onclick="openAddExpense('${caseItem.id}')">
+                    <svg class="mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    Add Expense
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -273,11 +431,78 @@
       }).join('');
     }
 
+    function viewCaseForms(caseId) {
+      const caseItem = cases.find(c => c.id === caseId);
+      if (!caseItem) return;
+
+      document.getElementById('modal-title').textContent = `Forms for ${caseId}`;
+      const formsList = document.getElementById('modal-forms-list');
+
+      const requiredForms = [
+        { id: 'repatriation-note', name: 'Repatriation Note Sheet', required: true, url: 'https://zfrmz.in/jpSr0vdLbHP7x4Iv2dIu' },
+        { id: 'mat', name: 'MAT', required: true, url: 'https://zfrmz.in/UFyPMlKTLcTGK3WDFERf' },
+        { id: 'ambulance-booking', name: 'Ambulance Booking Request', required: true, url: 'https://zfrmz.in/WupO2EeUAMYbPbVEYbTh' },
+        { id: 'pre-repatriation', name: 'Pre Repatriation Form', required: true, url: 'https://zfrmz.in/BZAhVXVHn9F0Sp9vbJms' },
+        { id: 'kyc-documents', name: 'KYC Documents for Medical Escort', required: true, url: 'https://zfrmz.in/aQStu9jDsxsFTXrRaxW8' }
+      ];
+
+      formsList.innerHTML = `
+        <div class="space-y-3">
+          ${requiredForms.map(form => {
+        const isCompleted = caseItem.completedForms && caseItem.completedForms.includes(form.id);
+        return `
+              <div class="p-3 border rounded-lg ${isCompleted ? 'bg-green-50 border-green-200' : 'bg-gray-50 border-gray-200'}">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    ${isCompleted ?
+            '<svg class="h-5 w-5 text-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg>' :
+            '<svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle></svg>'
+          }
+                    <span class="font-medium ${isCompleted ? 'text-green-900' : 'text-gray-900'}">${form.name}</span>
+                    ${form.required ? '<span class="text-xs text-red-600">*Required</span>' : '<span class="text-xs text-gray-500">Optional</span>'}
+                  </div>
+                  <span class="text-xs ${isCompleted ? 'text-green-700' : 'text-gray-500'}">${isCompleted ? 'Completed' : 'Pending'}</span>
+                </div>
+              </div>
+            `;
+      }).join('')}
+        </div>
+      `;
+
+      Utils.showModal('view-forms-modal');
+    }
+
+    function openAddExpense(caseId) {
+      const caseItem = cases.find(c => c.id === caseId);
+      if (!caseItem) return;
+
+      document.getElementById('expense-case-info').textContent = `Adding expense for ${caseId} - ${caseItem.patient}`;
+      document.getElementById('add-expense-form').dataset.caseId = caseId;
+      Utils.showModal('add-expense-modal');
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       Auth.requireAuth(true);
       loadCases();
       updateStatistics();
       renderCases();
+      Utils.initModals();
+
+      // Handle upload cases form
+      document.getElementById('upload-cases-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        Utils.showToast('Cases upload feature coming soon!', 'info');
+        Utils.hideModal('upload-cases-modal');
+      });
+
+      // Handle add expense form
+      document.getElementById('add-expense-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const caseId = e.target.dataset.caseId;
+        Utils.showToast(`Expense added to ${caseId} successfully!`, 'success');
+        Utils.hideModal('add-expense-modal');
+        e.target.reset();
+      });
     });
   </script>
   <style>
