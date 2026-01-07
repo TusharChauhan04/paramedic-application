@@ -569,6 +569,46 @@ a:hover {
   color: var(--warning);
 }
 
+.text-orange-700 {
+  color: rgb(194, 65, 12);
+}
+
+.text-orange-900 {
+  color: rgb(124, 45, 18);
+}
+
+.text-green-700 {
+  color: rgb(21, 128, 61);
+}
+
+.text-green-900 {
+  color: rgb(20, 83, 45);
+}
+
+.text-teal-700 {
+  color: rgb(15, 118, 110);
+}
+
+.text-teal-900 {
+  color: rgb(19, 78, 74);
+}
+
+.text-indigo-700 {
+  color: rgb(67, 56, 202);
+}
+
+.text-indigo-900 {
+  color: rgb(49, 46, 129);
+}
+
+.text-purple-700 {
+  color: rgb(126, 34, 206);
+}
+
+.text-purple-900 {
+  color: rgb(88, 28, 135);
+}
+
 /* ============================================
    BACKGROUND UTILITIES
    ============================================ */
@@ -610,6 +650,22 @@ a:hover {
 
 .bg-purple-50 {
   background-color: rgb(250, 245, 255);
+}
+
+.bg-green-50 {
+  background-color: rgb(240, 253, 244);
+}
+
+.bg-teal-50 {
+  background-color: rgb(240, 253, 250);
+}
+
+.bg-orange-50 {
+  background-color: rgb(255, 247, 237);
+}
+
+.bg-indigo-50 {
+  background-color: rgb(238, 242, 255);
 }
 
 .bg-transparent {
@@ -661,6 +717,22 @@ a:hover {
 
 .border-purple-200 {
   border-color: rgb(233, 213, 255);
+}
+
+.border-green-200 {
+  border-color: rgb(187, 247, 208);
+}
+
+.border-teal-200 {
+  border-color: rgb(153, 246, 228);
+}
+
+.border-orange-200 {
+  border-color: rgb(254, 215, 170);
+}
+
+.border-indigo-200 {
+  border-color: rgb(199, 210, 254);
 }
 
 .rounded {

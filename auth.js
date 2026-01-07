@@ -29,6 +29,54 @@ const Auth = {
         employeeId: 'ADM2024001',
         userType: 'admin'
       }
+    },
+    marketing: {
+      email: 'marketing@demo.com',
+      password: 'marketing123',
+      data: {
+        id: '2',
+        name: 'Marketing Manager',
+        email: 'marketing@demo.com',
+        role: 'Marketing Department',
+        employeeId: 'MKT2024001',
+        userType: 'user'
+      }
+    },
+    medical: {
+      email: 'medical@demo.com',
+      password: 'medical123',
+      data: {
+        id: '3',
+        name: 'Medical Officer',
+        email: 'medical@demo.com',
+        role: 'Medical Department',
+        employeeId: 'MED2024001',
+        userType: 'user'
+      }
+    },
+    operations: {
+      email: 'operations@demo.com',
+      password: 'operations123',
+      data: {
+        id: '4',
+        name: 'Operations Manager',
+        email: 'operations@demo.com',
+        role: 'Operations Department',
+        employeeId: 'OPS2024001',
+        userType: 'user'
+      }
+    },
+    accounts: {
+      email: 'accounts@demo.com',
+      password: 'accounts123',
+      data: {
+        id: '5',
+        name: 'Accounts Manager',
+        email: 'accounts@demo.com',
+        role: 'Accounts Department',
+        employeeId: 'ACC2024001',
+        userType: 'user'
+      }
     }
   },
 
@@ -39,15 +87,13 @@ const Auth = {
    * @returns {Object|null} User data if successful, null otherwise
    */
   login(email, password) {
-    const demoUser = this.DEMO_ACCOUNTS.user;
-    const demoAdmin = this.DEMO_ACCOUNTS.admin;
-
-    if (email === demoUser.email && password === demoUser.password) {
-      localStorage.setItem('user', JSON.stringify(demoUser.data));
-      return demoUser.data;
-    } else if (email === demoAdmin.email && password === demoAdmin.password) {
-      localStorage.setItem('user', JSON.stringify(demoAdmin.data));
-      return demoAdmin.data;
+    // Check all demo accounts
+    for (const accountKey in this.DEMO_ACCOUNTS) {
+      const account = this.DEMO_ACCOUNTS[accountKey];
+      if (email === account.email && password === account.password) {
+        localStorage.setItem('user', JSON.stringify(account.data));
+        return account.data;
+      }
     }
 
     return null;
