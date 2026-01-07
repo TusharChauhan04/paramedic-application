@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents - Air Medical 24x7</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+
+<body>
+    <div class="min-h-screen bg-gray-50">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <img src="assets/air-medical-logo.png" alt="Air Medical 24x7" onerror="this.style.display='none'">
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    Dashboard
+                </a>
+                <a href="admin-users.html" class="sidebar-link" id="admin-users-link" style="display: none;">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    User Management
+                </a>
+                <a href="admin-cases.html" class="sidebar-link" id="admin-cases-link" style="display: none;">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    All Cases
+                </a>
+                <a href="cases.html" class="sidebar-link" id="user-cases-link">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    Cases & Forms
+                </a>
+                <a href="leads.html" class="sidebar-link">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="8.5" cy="7" r="4"></circle>
+                        <line x1="20" y1="8" x2="20" y2="14"></line>
+                        <line x1="23" y1="11" x2="17" y2="11"></line>
+                    </svg>
+                    Leads
+                </a>
+                <a href="expenses.html" class="sidebar-link">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    Expenses
+                </a>
+                <a href="documents.html" class="sidebar-link active">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    Documents
+                </a>
+                <a href="location.html" class="sidebar-link">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Location Tracking
+                </a>
+                <a href="settings.html" class="sidebar-link">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M12 1v6m0 6v6m5.196-15.804L13.464 7.46m-3.392 9.08-3.732 3.732m15.804-5.195L17.54 13.464m-9.08-3.392-3.732-3.732">
+                        </path>
+                    </svg>
+                    Settings
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="flex-1 flex items-center">
+                    <button type="button" id="mobile-menu-btn" class="btn-icon btn-ghost" style="display: none;">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-icon btn-ghost notification-btn">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-badge"></span>
+                    </button>
+                    <div class="user-dropdown">
+                        <button id="user-dropdown-btn" class="user-btn">
+                            <div class="user-avatar" id="user-avatar">JD</div>
+                            <span class="hidden md:block text-sm font-medium text-gray-700" id="user-display-name">John
+                                Doe</span>
+                        </button>
+                        <div id="user-dropdown-menu" class="dropdown-menu">
+                            <div class="dropdown-header">
+                                <p class="text-sm font-medium" id="user-name">John Doe</p>
+                                <p class="text-xs text-gray-500" id="user-email">user@demo.com</p>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" data-logout class="dropdown-item danger">
+                                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                    <polyline points="16 17 21 12 16 7"></polyline>
+                                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                                </svg>
+                                Log out
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="content-area space-y-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Documents</h1>
+                    <p class="text-gray-600 mt-1">Manage and track all your documents</p>
+                </div>
+
+                <!-- Document Type Cards - Horizontal Layout -->
+                <div class="flex gap-4 overflow-x-auto pb-2">
+                    <!-- Flight Details Card -->
+                    <div class="document-card-horizontal" onclick="showDocumentDetails('flightDetails')"
+                        id="card-flightDetails">
+                        <div class="card-icon-horizontal" style="background-color: rgba(59, 130, 246, 0.1);">
+                            <svg class="h-6 w-6" style="color: rgb(59, 130, 246);" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="card-content-horizontal">
+                            <h3 class="text-base font-semibold text-gray-900">Flight Details</h3>
+                            <p class="text-sm text-gray-500"><span id="count-flightDetails">2</span> documents</p>
+                        </div>
+                    </div>
+
+                    <!-- Quotation Card -->
+                    <div class="document-card-horizontal" onclick="showDocumentDetails('quotations')"
+                        id="card-quotations">
+                        <div class="card-icon-horizontal" style="background-color: rgba(16, 185, 129, 0.1);">
+                            <svg class="h-6 w-6" style="color: rgb(16, 185, 129);" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                            </svg>
+                        </div>
+                        <div class="card-content-horizontal">
+                            <h3 class="text-base font-semibold text-gray-900">Quotation</h3>
+                            <p class="text-sm text-gray-500"><span id="count-quotations">2</span> documents</p>
+                        </div>
+                    </div>
+
+                    <!-- Sub Quotation Card -->
+                    <div class="document-card-horizontal" onclick="showDocumentDetails('subQuotations')"
+                        id="card-subQuotations">
+                        <div class="card-icon-horizontal" style="background-color: rgba(245, 158, 11, 0.1);">
+                            <svg class="h-6 w-6" style="color: rgb(245, 158, 11);" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="12" y1="18" x2="12" y2="12"></line>
+                                <line x1="9" y1="15" x2="15" y2="15"></line>
+                            </svg>
+                        </div>
+                        <div class="card-content-horizontal">
+                            <h3 class="text-base font-semibold text-gray-900">Sub Quotation</h3>
+                            <p class="text-sm text-gray-500"><span id="count-subQuotations">2</span> documents</p>
+                        </div>
+                    </div>
+
+                    <!-- Invoice Card -->
+                    <div class="document-card-horizontal" onclick="showDocumentDetails('invoices')" id="card-invoices">
+                        <div class="card-icon-horizontal" style="background-color: rgba(139, 92, 246, 0.1);">
+                            <svg class="h-6 w-6" style="color: rgb(139, 92, 246);" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                                <line x1="2" y1="10" x2="22" y2="10"></line>
+                            </svg>
+                        </div>
+                        <div class="card-content-horizontal">
+                            <h3 class="text-base font-semibold text-gray-900">Invoice</h3>
+                            <p class="text-sm text-gray-500"><span id="count-invoices">2</span> documents</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Details Section -->
+                <div id="details-section" class="card hidden">
+                    <div class="card-header flex flex-row items-center justify-between">
+                        <div>
+                            <div class="card-title" id="details-title">Flight Details</div>
+                            <div class="card-description" id="details-description">View and manage flight booking
+                                details</div>
+                        </div>
+                        <button class="btn btn-primary" id="add-document-btn" onclick="openAddModal()">
+                            <svg class="mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Add New
+                        </button>
+                    </div>
+                    <div class="card-content">
+                        <!-- Search Bar -->
+                        <div class="mb-4">
+                            <div class="relative">
+                                <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                </svg>
+                                <input type="text" id="document-search" class="input pl-10 w-full md:w-96"
+                                    placeholder="Search documents..." oninput="searchDocuments()">
+                            </div>
+                        </div>
+
+                        <!-- Documents List -->
+                        <div id="documents-list"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="utils.js"></script>
+    <script src="app.js"></script>
+    <script>
+        let currentDocumentType = null;
+
+        // Sample document data
+        const documentsData = {
+            flightDetails: [
+                { id: 'FD-001', date: '2024-01-15', flightNumber: 'AI-123', route: 'DXB → DEL', status: 'Confirmed', passengers: '2' },
+                { id: 'FD-002', date: '2024-01-18', flightNumber: 'AI-456', route: 'DEL → BOM', status: 'Pending', passengers: '1' }
+            ],
+            quotations: [
+                { id: 'QUO-001', date: '2024-01-10', client: 'Air Medical', amount: 5000, status: 'Sent', validUntil: '2024-02-10' },
+                { id: 'QUO-002', date: '2024-01-12', client: 'Medical Escort', amount: 3500, status: 'Approved', validUntil: '2024-02-12' }
+            ],
+            subQuotations: [
+                { id: 'SUB-001', date: '2024-01-12', parentQuotation: 'QUO-001', amount: 2500, status: 'Approved', description: 'Medical Equipment' },
+                { id: 'SUB-002', date: '2024-01-14', parentQuotation: 'QUO-002', amount: 1500, status: 'Pending', description: 'Transport Services' }
+            ],
+            invoices: [
+                { id: 'INV-001', date: '2024-01-20', client: 'Air Medical', amount: 5000, status: 'Paid', dueDate: '2024-02-20' },
+                { id: 'INV-002', date: '2024-01-22', client: 'Medical Escort', amount: 3500, status: 'Pending', dueDate: '2024-02-22' }
+            ]
+        };
+
+        function updateDocumentCounts() {
+            document.getElementById('count-flightDetails').textContent = documentsData.flightDetails.length;
+            document.getElementById('count-quotations').textContent = documentsData.quotations.length;
+            document.getElementById('count-subQuotations').textContent = documentsData.subQuotations.length;
+            document.getElementById('count-invoices').textContent = documentsData.invoices.length;
+        }
+
+        function showDocumentDetails(documentType) {
+            currentDocumentType = documentType;
+
+            // Remove active class from all cards
+            document.querySelectorAll('.document-card-horizontal').forEach(card => {
+                card.classList.remove('active');
+            });
+
+            // Add active class to clicked card
+            document.getElementById(`card-${documentType}`).classList.add('active');
+
+            // Show details section
+            const detailsSection = document.getElementById('details-section');
+            detailsSection.classList.remove('hidden');
+
+            // Update title and description
+            const titles = {
+                flightDetails: 'Flight Details',
+                quotations: 'Quotations',
+                subQuotations: 'Sub Quotations',
+                invoices: 'Invoices'
+            };
+
+            const descriptions = {
+                flightDetails: 'View and manage flight booking details',
+                quotations: 'View and manage quotations sent to clients',
+                subQuotations: 'View and manage sub-quotations linked to main quotations',
+                invoices: 'View and manage invoices and payment status'
+            };
+
+            document.getElementById('details-title').textContent = titles[documentType];
+            document.getElementById('details-description').textContent = descriptions[documentType];
+
+            // Clear search
+            document.getElementById('document-search').value = '';
+
+            // Render documents
+            renderDocuments(documentType);
+        }
+
+        function searchDocuments() {
+            if (!currentDocumentType) return;
+
+            const searchTerm = document.getElementById('document-search').value.toLowerCase();
+            const documents = documentsData[currentDocumentType];
+
+            if (!searchTerm) {
+                renderDocuments(currentDocumentType);
+                return;
+            }
+
+            // Filter documents based on search term
+            const filtered = documents.filter(doc => {
+                return Object.values(doc).some(value =>
+                    String(value).toLowerCase().includes(searchTerm)
+                );
+            });
+
+            // Render filtered results
+            renderFilteredDocuments(currentDocumentType, filtered);
+        }
+
+        function renderFilteredDocuments(documentType, documents) {
+            const container = document.getElementById('documents-list');
+
+            if (documents.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12">
+                        <svg class="mx-auto h-12 w-12 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <p class="mt-4 text-gray-500">No documents found matching your search</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Use the same rendering logic as renderDocuments
+            if (documentType === 'flightDetails') {
+                container.innerHTML = `
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-gray-50 border-b border-gray-200">
+                                <tr>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">ID</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Date</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Flight Number</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Route</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Passengers</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Status</th>
+                                    <th class="text-right p-3 text-sm font-medium text-gray-600">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${documents.map(doc => `
+                                    <tr class="border-b border-gray-100 hover:bg-gray-50">
+                                        <td class="p-3 text-sm font-medium text-gray-900">${doc.id}</td>
+                                        <td class="p-3 text-sm text-gray-600">${doc.date}</td>
+                                        <td class="p-3 text-sm text-gray-900">${doc.flightNumber}</td>
+                                        <td class="p-3 text-sm text-gray-600">${doc.route}</td>
+                                        <td class="p-3 text-sm text-gray-600">${doc.passengers}</td>
+                                        <td class="p-3"><span class="badge ${doc.status === 'Confirmed' ? 'badge-success' : 'badge-warning'}">${doc.status}</span></td>
+                                        <td class="p-3 text-right">
+                                            <button class="btn btn-outline btn-sm" onclick="viewDocument('${documentType}', '${doc.id}')">View</button>
+                                        </td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            } else if (documentType === 'quotations') {
+                container.innerHTML = `
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-gray-50 border-b border-gray-200">
+                                <tr>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">ID</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Date</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Client</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Amount</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Valid Until</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Status</th>
+                                    <th class="text-right p-3 text-sm font-medium text-gray-600">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${documents.map(doc => `
+                                    <tr class="border-b border-gray-100 hover:bg-gray-50">
+                                        <td class="p-3 text-sm font-medium text-gray-900">${doc.id}</td>
+                                        <td class="p-3 text-sm text-gray-600">${doc.date}</td>
+                                        <td class="p-3 text-sm text-gray-900">${doc.client}</td>
+                                        <td class="p-3 text-sm font-semibold text-gray-900">AED ${Utils.formatCurrency(doc.amount)}</td>
+                                        <td class="p-3 text-sm text-gray-600">${doc.validUntil}</td>
+                                        <td class="p-3"><span class="badge ${doc.status === 'Approved' ? 'badge-success' : doc.status === 'Sent' ? 'badge-primary' : 'badge-default'}">${doc.status}</span></td>
+                                        <td class="p-3 text-right">
+                                            <button class="btn btn-outline btn-sm" onclick="viewDocument('${documentType}', '${doc.id}')">View</button>
+                                        </td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            } else if (documentType === 'subQuotations') {
+                container.innerHTML = `
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-gray-50 border-b border-gray-200">
+                                <tr>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">ID</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Date</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Parent Quotation</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Description</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Amount</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Status</th>
+                                    <th class="text-right p-3 text-sm font-medium text-gray-600">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${documents.map(doc => `
+                                    <tr class="border-b border-gray-100 hover:bg-gray-50">
+                                        <td class="p-3 text-sm font-medium text-gray-900">${doc.id}</td>
+                                        <td class="p-3 text-sm text-gray-600">${doc.date}</td>
+                                        <td class="p-3 text-sm text-gray-900">${doc.parentQuotation}</td>
+                                        <td class="p-3 text-sm text-gray-600">${doc.description}</td>
+                                        <td class="p-3 text-sm font-semibold text-gray-900">AED ${Utils.formatCurrency(doc.amount)}</td>
+                                        <td class="p-3"><span class="badge ${doc.status === 'Approved' ? 'badge-success' : 'badge-warning'}">${doc.status}</span></td>
+                                        <td class="p-3 text-right">
+                                            <button class="btn btn-outline btn-sm" onclick="viewDocument('${documentType}', '${doc.id}')">View</button>
+                                        </td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            } else if (documentType === 'invoices') {
+                container.innerHTML = `
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-gray-50 border-b border-gray-200">
+                                <tr>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">ID</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Date</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Client</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Amount</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Due Date</th>
+                                    <th class="text-left p-3 text-sm font-medium text-gray-600">Status</th>
+                                    <th class="text-right p-3 text-sm font-medium text-gray-600">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${documents.map(doc => `
+                                    <tr class="border-b border-gray-100 hover:bg-gray-50">
+                                        <td class="p-3 text-sm font-medium text-gray-900">${doc.id}</td>
+                                        <td class="p-3 text-sm text-gray-600">${doc.date}</td>
+                                        <td class="p-3 text-sm text-gray-900">${doc.client}</td>
+                                        <td class="p-3 text-sm font-semibold text-gray-900">AED ${Utils.formatCurrency(doc.amount)}</td>
+                                        <td class="p-3 text-sm text-gray-600">${doc.dueDate}</td>
+                                        <td class="p-3"><span class="badge ${doc.status === 'Paid' ? 'badge-success' : 'badge-warning'}">${doc.status}</span></td>
+                                        <td class="p-3 text-right">
+                                            <button class="btn btn-outline btn-sm" onclick="viewDocument('${documentType}', '${doc.id}')">View</button>
+                                        </td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            }
+        }
+
+        function renderDocuments(documentType) {
+            renderFilteredDocuments(documentType, documentsData[documentType]);
+        }
+
+        function openAddModal() {
+            Utils.showToast(`Add new ${currentDocumentType} feature coming soon!`, 'info');
+        }
+
+        function viewDocument(type, id) {
+            Utils.showToast(`Viewing ${id} - Full document view coming soon!`, 'info');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            Auth.requireAuth();
+            updateDocumentCounts();
+            // Auto-show Flight Details on load
+            showDocumentDetails('flightDetails');
+        });
+    </script>
+    <style>
+        .document-card-horizontal {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            min-width: 200px;
+            flex-shrink: 0;
+        }
+
+        .document-card-horizontal:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .document-card-horizontal.active {
+            border-color: #3b82f6;
+            background-color: #eff6ff;
+        }
+
+        .document-card-horizontal .card-icon-horizontal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .document-card-horizontal .card-content-horizontal {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .document-card-horizontal .card-content-horizontal h3 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        @media (max-width: 1023px) {
+            #mobile-menu-btn {
+                display: inline-flex !important;
+            }
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+    <script>
+        // Show/hide navigation links based on user role
+        (function () {
+            const user = Auth.getCurrentUser();
+            if (user && user.userType === 'admin') {
+                // Show admin-only links
+                const adminUsersLink = document.getElementById('admin-users-link');
+                const adminCasesLink = document.getElementById('admin-cases-link');
+                const userCasesLink = document.getElementById('user-cases-link');
+
+                if (adminUsersLink) adminUsersLink.style.display = '';
+                if (adminCasesLink) adminCasesLink.style.display = '';
+                if (userCasesLink) userCasesLink.style.display = 'none';
+            }
+        })();
+    </script>
+</body>
+
+</html>
