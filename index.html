@@ -13,12 +13,12 @@
 <body>
   <!-- Login Page -->
   <div class="min-h-screen flex items-center justify-center gradient-blue-bg p-4">
-    <div class="card w-full max-w-md shadow-xl" style="border-color: rgb(191, 219, 254);">
+    <div class="card w-full max-w-md shadow-xl login-card">
       <!-- Card Header -->
-      <div class="card-header text-center pb-8" style="border-bottom: none;">
-        <div style="margin: 0 auto 1rem;">
-          <img src="assets/air-medical-logo.png" alt="Air Medical 24x7"
-            style="width: 250px; height: auto; margin: 0 auto; display: block;" onerror="this.style.display='none'">
+      <div class="card-header text-center login-header">
+        <div class="login-logo-container">
+          <img src="assets/air-medical-logo.png" alt="Air Medical 24x7" class="login-logo"
+            onerror="this.style.display='none'">
         </div>
         <h1 class="text-3xl font-bold text-gray-900"></h1>
         <p class="text-base text-gray-600 mt-2">Sign in to access your dashboard</p>
@@ -40,23 +40,22 @@
         <form id="login-form" class="space-y-5">
           <div class="form-group">
             <label for="email" class="label">Email Address</label>
-            <input type="email" id="email" class="input h-11" placeholder="john.doe@digitalnext.com" required
-              style="border-color: var(--gray-300);">
+            <input type="email" id="email" class="input h-11 login-input" placeholder="john.doe@digitalnext.com"
+              required>
           </div>
 
           <div class="form-group">
             <label for="password" class="label">Password</label>
-            <input type="password" id="password" class="input h-11" placeholder="Enter your password" required
-              style="border-color: var(--gray-300);">
+            <input type="password" id="password" class="input h-11 login-input" placeholder="Enter your password"
+              required>
           </div>
 
-          <button type="submit" id="submit-btn" class="btn btn-primary w-full h-11 font-medium"
-            style="background-color: rgb(37, 99, 235);">
+          <button type="submit" id="submit-btn" class="btn btn-primary w-full h-11 font-medium login-btn">
             Sign In
           </button>
 
           <div class="text-center pt-2">
-            <a href="#" class="text-sm text-blue-600 font-medium" style="color: rgb(37, 99, 235);">
+            <a href="#" class="text-sm text-blue-600 font-medium login-link">
               Forgot password?
             </a>
           </div>
@@ -132,7 +131,7 @@
         <!-- Support Contact -->
         <div class="mt-6 pt-6 border-t border-gray-200 text-center text-sm text-gray-600">
           For support, contact IT at
-          <a href="mailto:support@digitalnext.com" class="text-blue-600" style="color: rgb(37, 99, 235);">
+          <a href="mailto:support@digitalnext.com" class="text-blue-600 login-link">
             support@digitalnext.com
           </a>
         </div>
@@ -141,8 +140,7 @@
   </div>
 
   <!-- Loading Spinner Overlay (Hidden by default) -->
-  <div id="loading-overlay" class="hidden"
-    style="position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 100; display: none; align-items: center; justify-content: center;">
+  <div id="loading-overlay" class="loading-overlay hidden">
     <div class="spinner"></div>
   </div>
 

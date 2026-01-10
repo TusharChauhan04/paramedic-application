@@ -27,24 +27,7 @@
                     </svg>
                     Dashboard
                 </a>
-                <a href="admin-users.html" class="sidebar-link" id="admin-users-link" style="display: none;">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                    </svg>
-                    User Management
-                </a>
-                <a href="admin-cases.html" class="sidebar-link" id="admin-cases-link" style="display: none;">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                    </svg>
-                    All Cases
-                </a>
+                <!-- Admin links will be injected here dynamically by JavaScript if user is admin -->
                 <a href="cases.html" class="sidebar-link" id="user-cases-link">
                     <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor">
@@ -83,9 +66,7 @@
                     Documents
                 </a>
                 <a href="location.html" class="sidebar-link">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <svg class="h-3 w-3" style="width: 0.75rem; height: 0.75rem; flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                         <circle cx="12" cy="10" r="3"></circle>
                     </svg>
                     Location Tracking
@@ -108,7 +89,7 @@
             <!-- Header -->
             <header class="header">
                 <div class="flex-1 flex items-center">
-                    <button type="button" id="mobile-menu-btn" class="btn-icon btn-ghost" style="display: none;">
+                    <button type="button" id="mobile-menu-btn" class="btn-icon btn-ghost hidden">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor">
                             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -176,8 +157,7 @@
                 </div>
 
                 <!-- SOS Emergency Alert (Shows when SOS is triggered) -->
-                <div id="sos-alert" class="hidden"
-                    style="background-color: rgb(254, 242, 242); border: 1px solid rgb(239, 68, 68); border-radius: 0.5rem; padding: 1rem;">
+                <div id="sos-alert" class="hidden" style="background-color: rgb(254, 242, 242); border: 1px solid rgb(239, 68, 68); border-radius: 0.5rem; padding: 1rem;">
                     <div class="flex items-start gap-3">
                         <svg class="h-5 w-5 text-red-600 flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -189,16 +169,14 @@
                             <h4 class="font-bold text-red-900">Emergency Alert Activated</h4>
                             <p class="text-sm text-red-800 mt-1">Emergency services have been notified. Your supervisor
                                 and nearby team members will be alerted with your current location.</p>
-                            <button class="btn btn-outline btn-sm mt-2"
-                                style="border-color: rgb(239, 68, 68); color: rgb(239, 68, 68); background: transparent;"
+                            <button class="btn btn-outline btn-sm mt-2" style="border-color: rgb(239, 68, 68); color: rgb(239, 68, 68); background: transparent;"
                                 onclick="dismissSOS()">Dismiss</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Clock In/Out Card -->
-                <div class="card"
-                    style="background: linear-gradient(to right, rgb(37, 99, 235), rgb(29, 78, 216)); border-color: rgb(191, 219, 254); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);">
+                <div class="card" style="background: linear-gradient(to right, rgb(37, 99, 235), rgb(29, 78, 216)); border-color: rgb(191, 219, 254); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);">
                     <div class="card-content" style="padding: 1.5rem 2rem;">
                         <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
                             <div style="color: white;">
@@ -206,8 +184,7 @@
                                 <p class="text-blue-100" id="clock-status">Clock in to track your attendance</p>
                             </div>
                             <div class="flex gap-3">
-                                <button id="clock-btn" class="btn btn-lg"
-                                    style="background: white; color: rgb(37, 99, 235); font-weight: 600; height: 3rem; padding: 0 1.5rem;"
+                                <button id="clock-btn" class="btn btn-lg" style="background: white; color: rgb(37, 99, 235); font-weight: 600; height: 3rem; padding: 0 1.5rem;"
                                     onclick="toggleClock()">
                                     <svg class="mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2">
@@ -224,16 +201,14 @@
 
                 <!-- Emergency Assistance Card (Always visible) -->
                 <div class="card" style="background-color: rgb(254, 242, 242); border-color: rgb(254, 202, 202);">
-                    <div class="card-content" style="padding: 1.5rem;">
+                    <div class="card-content modal-body-padded">
                         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                             <div>
                                 <h3 class="text-lg font-semibold text-red-900 mb-1">Emergency Assistance</h3>
                                 <p class="text-sm text-red-700">Press the SOS button if you need immediate emergency
                                     support</p>
                             </div>
-                            <button class="btn"
-                                style="background-color: rgb(220, 38, 38); color: white; font-weight: 700; height: 3.5rem; padding: 0 2rem; font-size: 1.125rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);"
-                                onclick="triggerSOS()">
+                            <button class="btn" style="background-color: rgb(220, 38, 38); color: white; font-weight: 700; height: 3.5rem; padding: 0 2rem; font-size: 1.125rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);" onclick="triggerSOS()">
                                 <svg class="mr-2 h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2">
                                     <path
@@ -248,9 +223,8 @@
 
                 <!-- Statistics Grid -->
                 <div class="flex gap-4 overflow-x-auto pb-2">
-                    <div class="card" style="flex: 1 1 0; min-width: 200px;">
-                        <div class="card-header flex flex-row items-center justify-between"
-                            style="padding-bottom: 0.5rem; padding-top: 1rem;">
+                    <div class="card" style="flex: 1 1 0%; min-width: 200px;">
+                        <div class="card-header flex flex-row items-center justify-between" style="padding: 1rem; padding-bottom: 0.5rem;">
                             <div class="text-sm font-medium text-gray-600">Total Cases</div>
                             <svg class="h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor">
@@ -258,15 +232,14 @@
                                 <polyline points="14 2 14 8 20 8"></polyline>
                             </svg>
                         </div>
-                        <div class="card-content" style="padding-top: 0;">
+                        <div class="card-content card-content-no-top-padding">
                             <div class="text-2xl font-bold text-gray-900">24</div>
                             <p class="text-xs text-gray-500 mt-1">Assigned this month</p>
                         </div>
                     </div>
 
-                    <div class="card" style="flex: 1 1 0; min-width: 200px;">
-                        <div class="card-header flex flex-row items-center justify-between"
-                            style="padding-bottom: 0.5rem; padding-top: 1rem;">
+                    <div class="card" style="flex: 1 1 0%; min-width: 200px;">
+                        <div class="card-header flex flex-row items-center justify-between" style="padding: 1rem; padding-bottom: 0.5rem;">
                             <div class="text-sm font-medium text-gray-600">Completed</div>
                             <svg class="h-4 w-4 text-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor">
@@ -274,15 +247,14 @@
                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                             </svg>
                         </div>
-                        <div class="card-content" style="padding-top: 0;">
+                        <div class="card-content card-content-no-top-padding">
                             <div class="text-2xl font-bold text-gray-900">18</div>
                             <p class="text-xs text-gray-500 mt-1">75% completion rate</p>
                         </div>
                     </div>
 
-                    <div class="card" style="flex: 1 1 0; min-width: 200px;">
-                        <div class="card-header flex flex-row items-center justify-between"
-                            style="padding-bottom: 0.5rem; padding-top: 1rem;">
+                    <div class="card" style="flex: 1 1 0%; min-width: 200px;">
+                        <div class="card-header flex flex-row items-center justify-between" style="padding: 1rem; padding-bottom: 0.5rem;">
                             <div class="text-sm font-medium text-gray-600">Pending</div>
                             <svg class="h-4 w-4 text-orange-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor">
@@ -291,15 +263,14 @@
                                 <line x1="12" y1="16" x2="12.01" y2="16"></line>
                             </svg>
                         </div>
-                        <div class="card-content" style="padding-top: 0;">
+                        <div class="card-content card-content-no-top-padding">
                             <div class="text-2xl font-bold text-gray-900">3</div>
                             <p class="text-xs text-gray-500 mt-1">Requires attention</p>
                         </div>
                     </div>
 
-                    <div class="card" style="flex: 1 1 0; min-width: 200px;">
-                        <div class="card-header flex flex-row items-center justify-between"
-                            style="padding-bottom: 0.5rem; padding-top: 1rem;">
+                    <div class="card" style="flex: 1 1 0%; min-width: 200px;">
+                        <div class="card-header flex flex-row items-center justify-between" style="padding: 1rem; padding-bottom: 0.5rem;">
                             <div class="text-sm font-medium text-gray-600">On Hold</div>
                             <svg class="h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor">
@@ -308,7 +279,7 @@
                                 <line x1="14" y1="15" x2="14" y2="9"></line>
                             </svg>
                         </div>
-                        <div class="card-content" style="padding-top: 0;">
+                        <div class="card-content card-content-no-top-padding">
                             <div class="text-2xl font-bold text-gray-900">3</div>
                             <p class="text-xs text-gray-500 mt-1">Awaiting updates</p>
                         </div>
@@ -421,7 +392,7 @@
         function triggerSOS() {
             // Show the SOS alert
             document.getElementById('sos-alert').classList.remove('hidden');
-            Utils.showToast('🚨 SOS ALERT TRIGGERED! Emergency services notified.', 'error');
+            Utils.showToast('ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â°ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¸ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¨ SOS ALERT TRIGGERED! Emergency services notified.', 'error');
             console.log('SOS ALERT ACTIVATED');
         }
 
@@ -432,7 +403,7 @@
         function renderPendingCases() {
             const container = document.getElementById('pending-cases-list');
             container.innerHTML = pendingCases.map(caseItem => `
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:border-blue-300 transition-colors" style="background-color: rgba(239, 246, 255, 0.5);">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:border-blue-300 transition-colors pending-case-bg">
           <div class="space-y-1">
             <div class="flex items-center gap-2">
               <span class="font-semibold text-gray-900">${caseItem.id}</span>
@@ -483,22 +454,6 @@
             }
         }
     </style>
-    <script>
-        // Show/hide navigation links based on user role
-        (function () {
-            const user = Auth.getCurrentUser();
-            if (user && user.userType === 'admin') {
-                // Show admin-only links
-                const adminUsersLink = document.getElementById('admin-users-link');
-                const adminCasesLink = document.getElementById('admin-cases-link');
-                const userCasesLink = document.getElementById('user-cases-link');
-
-                if (adminUsersLink) adminUsersLink.style.display = '';
-                if (adminCasesLink) adminCasesLink.style.display = '';
-                if (userCasesLink) userCasesLink.style.display = 'none';
-            }
-        })();
-    </script>
 </body>
 
 </html>

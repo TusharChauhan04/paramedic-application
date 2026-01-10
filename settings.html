@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -26,22 +26,7 @@
           </svg>
           Dashboard
         </a>
-        <a href="admin-users.html" class="sidebar-link" id="admin-users-link" style="display: none;">
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>
-          User Management
-        </a>
-        <a href="admin-cases.html" class="sidebar-link" id="admin-cases-link" style="display: none;">
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-          </svg>
-          All Cases
-        </a>
+                        <!-- Admin links will be injected here dynamically by JavaScript if user is admin -->
         <a href="cases.html" class="sidebar-link" id="user-cases-link">
           <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -76,8 +61,7 @@
           Documents
         </a>
         <a href="location.html" class="sidebar-link">
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <svg class="h-3 w-3" style="width: 0.75rem; height: 0.75rem; flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
           Location Tracking
@@ -99,7 +83,7 @@
       <!-- Header -->
       <header class="header">
         <div class="flex-1 flex items-center">
-          <button type="button" id="mobile-menu-btn" class="btn-icon btn-ghost" style="display: none;">
+          <button type="button" id="mobile-menu-btn" class="btn-icon btn-ghost hidden">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -420,9 +404,7 @@
                 <!-- Location Settings -->
                 <div>
                   <div class="flex items-center gap-2 mb-4">
-                    <svg class="h-5 w-5 text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <svg class="h-3 w-3" style="width: 0.75rem; height: 0.75rem; flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                       <circle cx="12" cy="10" r="3"></circle>
                     </svg>
                     <h3 class="text-lg font-semibold text-gray-900">Location Settings</h3>

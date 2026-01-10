@@ -27,24 +27,7 @@
                     </svg>
                     Dashboard
                 </a>
-                <a href="admin-users.html" class="sidebar-link" id="admin-users-link" style="display: none;">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                    </svg>
-                    User Management
-                </a>
-                <a href="admin-cases.html" class="sidebar-link" id="admin-cases-link" style="display: none;">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                    </svg>
-                    All Cases
-                </a>
+                                <!-- Admin links will be injected here dynamically by JavaScript if user is admin -->
                 <a href="cases.html" class="sidebar-link" id="user-cases-link">
                     <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor">
@@ -83,9 +66,7 @@
                     Documents
                 </a>
                 <a href="location.html" class="sidebar-link">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <svg class="h-3 w-3" style="width: 0.75rem; height: 0.75rem; flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                         <circle cx="12" cy="10" r="3"></circle>
                     </svg>
                     Location Tracking
@@ -108,7 +89,7 @@
             <!-- Header -->
             <header class="header">
                 <div class="flex-1 flex items-center">
-                    <button type="button" id="mobile-menu-btn" class="btn-icon btn-ghost" style="display: none;">
+                    <button type="button" id="mobile-menu-btn" class="btn-icon btn-ghost hidden">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor">
                             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -183,9 +164,9 @@
 
                 <!-- Statistics Cards -->
                 <div class="flex gap-4 overflow-x-auto pb-2">
-                    <div class="card" style="flex: 1 1 0; min-width: 180px;">
+                    <div class="card" style="flex: 1 1 0%; min-width: 180px;">
                         <div class="card-header flex flex-row items-center justify-between"
-                            style="padding-bottom: 0.5rem;">
+                            style="padding: 1rem; padding-bottom: 0.5rem;">
                             <div class="text-sm font-medium text-gray-600">Total Leads</div>
                             <svg class="h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor">
@@ -198,9 +179,9 @@
                         </div>
                     </div>
 
-                    <div class="card" style="flex: 1 1 0; min-width: 180px;">
+                    <div class="card" style="flex: 1 1 0%; min-width: 180px;">
                         <div class="card-header flex flex-row items-center justify-between"
-                            style="padding-bottom: 0.5rem;">
+                            style="padding: 1rem; padding-bottom: 0.5rem;">
                             <div class="text-sm font-medium text-gray-600">New Leads</div>
                             <svg class="h-4 w-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor">
@@ -214,9 +195,9 @@
                         </div>
                     </div>
 
-                    <div class="card" style="flex: 1 1 0; min-width: 180px;">
+                    <div class="card" style="flex: 1 1 0%; min-width: 180px;">
                         <div class="card-header flex flex-row items-center justify-between"
-                            style="padding-bottom: 0.5rem;">
+                            style="padding: 1rem; padding-bottom: 0.5rem;">
                             <div class="text-sm font-medium text-gray-600">Qualified</div>
                             <svg class="h-4 w-4 text-orange-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor">
@@ -229,9 +210,9 @@
                         </div>
                     </div>
 
-                    <div class="card" style="flex: 1 1 0; min-width: 180px;">
+                    <div class="card" style="flex: 1 1 0%; min-width: 180px;">
                         <div class="card-header flex flex-row items-center justify-between"
-                            style="padding-bottom: 0.5rem;">
+                            style="padding: 1rem; padding-bottom: 0.5rem;">
                             <div class="text-sm font-medium text-gray-600">Converted</div>
                             <svg class="h-4 w-4 text-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor">
@@ -253,9 +234,9 @@
                     </div>
 
                     <!-- Search Bar -->
-                    <div style="padding: 1rem 1.5rem; border-bottom: 1px solid var(--gray-200);">
-                        <div style="position: relative;">
-                            <svg style="position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); width: 1rem; height: 1rem; color: var(--gray-400);"
+                    <div class="search-wrapper">
+                        <div class="pos-relative">
+                            <svg class="search-icon"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <circle cx="11" cy="11" r="8"></circle>
@@ -263,12 +244,12 @@
                             </svg>
                             <input type="text" id="lead-search"
                                 placeholder="Search leads by name, phone, company, or source..."
-                                style="width: 100%; padding: 0.5rem 0.75rem 0.5rem 2.5rem; border: 1px solid var(--gray-300); border-radius: 0.375rem; font-size: 0.875rem; outline: none;"
+                                class="search-input"
                                 oninput="filterLeads(this.value)" />
                         </div>
                     </div>
 
-                    <div class="card-content" style="padding: 0;">
+                    <div class="card-content card-content-no-padding">
                         <div class="table-container">
                             <table class="leads-table">
                                 <thead>
@@ -306,46 +287,46 @@
         <div class="modal modal-large">
             <div class="modal-header">
                 <div class="modal-title">Lead Details</div>
-                <button class="modal-close" onclick="Utils.hideModal('lead-details-modal')">×</button>
+                <button class="modal-close" onclick="Utils.hideModal('lead-details-modal')">ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â</button>
             </div>
-            <div class="modal-body" style="padding: 1.5rem;">
+            <div class="modal-body modal-body-padded">
                 <h3 class="text-sm font-semibold text-gray-700 mb-4 pb-3 border-b border-gray-200">Lead Information</h3>
 
                 <!-- ONLY 11 Fields - Proper Two Column Grid -->
-                <div style="display: grid; grid-template-columns: auto 1fr; gap: 0.5rem 2rem; font-size: 0.875rem;">
-                    <div style="text-align: right; color: #6b7280;">Lead Owner</div>
-                    <div style="color: #111827;" id="detail-lead-owner"></div>
+                <div class="detail-grid">
+                    <div class="detail-grid-label">Lead Owner</div>
+                    <div class="detail-grid-value" id="detail-lead-owner"></div>
 
-                    <div style="text-align: right; color: #6b7280;">Company</div>
-                    <div style="color: #111827;" id="detail-company"></div>
+                    <div class="detail-grid-label">Company</div>
+                    <div class="detail-grid-value" id="detail-company"></div>
 
-                    <div style="text-align: right; color: #6b7280;">Lead Name</div>
-                    <div style="color: #111827; font-weight: 500;" id="detail-lead-name"></div>
+                    <div class="detail-grid-label">Lead Name</div>
+                    <div class="detail-grid-value-bold" id="detail-lead-name"></div>
 
-                    <div style="text-align: right; color: #6b7280;">Phone</div>
-                    <div style="color: #111827;" id="detail-phone"></div>
+                    <div class="detail-grid-label">Phone</div>
+                    <div class="detail-grid-value" id="detail-phone"></div>
 
-                    <div style="text-align: right; color: #6b7280;">Lead Source</div>
-                    <div style="color: #111827;" id="detail-lead-source"></div>
+                    <div class="detail-grid-label">Lead Source</div>
+                    <div class="detail-grid-value" id="detail-lead-source"></div>
 
-                    <div style="text-align: right; color: #6b7280;">Services Opted</div>
-                    <div style="color: #111827;" id="detail-services"></div>
+                    <div class="detail-grid-label">Services Opted</div>
+                    <div class="detail-grid-value" id="detail-services"></div>
 
-                    <div style="text-align: right; color: #6b7280;">Transport</div>
-                    <div style="color: #111827;" id="detail-transport"></div>
+                    <div class="detail-grid-label">Transport</div>
+                    <div class="detail-grid-value" id="detail-transport"></div>
 
-                    <div style="text-align: right; color: #6b7280;">Lead Owner Phone</div>
-                    <div style="color: #111827;" id="detail-owner-phone"></div>
+                    <div class="detail-grid-label">Lead Owner Phone</div>
+                    <div class="detail-grid-value" id="detail-owner-phone"></div>
 
-                    <div style="text-align: right; color: #6b7280;">Created Time</div>
-                    <div style="color: #111827;" id="detail-created-time"></div>
+                    <div class="detail-grid-label">Created Time</div>
+                    <div class="detail-grid-value" id="detail-created-time"></div>
                 </div>
 
                 <!-- Notes Section at Bottom -->
-                <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb;">
-                    <div style="font-size: 0.875rem; font-weight: 600; color: #374151; margin-bottom: 0.5rem;">Notes /
+                <div class="notes-section">
+                    <div class="notes-title">Notes /
                         Description</div>
-                    <div style="font-size: 0.875rem; color: #6b7280;" id="detail-notes"></div>
+                    <div class="notes-content" id="detail-notes"></div>
                 </div>
             </div>
         </div>
@@ -356,7 +337,7 @@
         <div class="modal modal-large">
             <div class="modal-header">
                 <div class="modal-title">Add New Lead</div>
-                <button class="modal-close" onclick="Utils.hideModal('add-lead-modal')">×</button>
+                <button class="modal-close" onclick="Utils.hideModal('add-lead-modal')">ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â</button>
             </div>
             <div class="modal-body">
                 <p class="text-gray-600">Lead creation form will be integrated here.</p>
@@ -379,7 +360,7 @@
                 leadName: 'Medevacbyneo',
                 phone: '+917982469895',
                 leadOwner: 'Super Admin',
-                leadSource: 'Contact Page – Free Quotation Form',
+                leadSource: 'Contact Page ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ Free Quotation Form',
                 company: 'Air Medical',
                 createdTime: '2024-12-10 14:23:00',
                 servicesOpted: 'Air Ambulance, Medical Escort',
@@ -444,7 +425,7 @@
                 leadName: 'Testing for the website lead conversion',
                 phone: '+918800027870',
                 leadOwner: 'Super Admin',
-                leadSource: 'Contact Page – Free Quotation Form',
+                leadSource: 'Contact Page ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ Free Quotation Form',
                 company: 'Air Medical',
                 createdTime: '2024-12-15 13:10:00',
                 servicesOpted: 'Air Ambulance',
@@ -470,7 +451,7 @@
         function renderLeadsTable() {
             const tbody = document.getElementById('leads-table-body');
             tbody.innerHTML = allLeads.map(lead => `
-                <tr onclick="showLeadDetails('${lead.id}')" style="cursor: pointer;">
+                <tr onclick="showLeadDetails('${lead.id}')" class="table-row-clickable">
                     <td>${lead.leadName}</td>
                     <td>
                         <div class="flex items-center gap-2">
@@ -571,22 +552,6 @@
             }
         }
     </style>
-    <script>
-        // Show/hide navigation links based on user role
-        (function () {
-            const user = Auth.getCurrentUser();
-            if (user && user.userType === 'admin') {
-                // Show admin-only links
-                const adminUsersLink = document.getElementById('admin-users-link');
-                const adminCasesLink = document.getElementById('admin-cases-link');
-                const userCasesLink = document.getElementById('user-cases-link');
-
-                if (adminUsersLink) adminUsersLink.style.display = '';
-                if (adminCasesLink) adminCasesLink.style.display = '';
-                if (userCasesLink) userCasesLink.style.display = 'none';
-            }
-        })();
-    </script>
 </body>
 
 </html>

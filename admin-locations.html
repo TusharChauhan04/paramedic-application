@@ -54,9 +54,7 @@
                         <line x1="16" y1="17" x2="8" y2="17"></line>
                         <polyline points="10 9 9 9 8 9"></polyline>
                     </svg>Documents</a>
-                <a href="admin-locations.html" class="admin-sidebar-link active"><svg class="icon"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <a href="admin-locations.html" class="admin-sidebar-link active"><svg class="h-3 w-3" style="width: 0.75rem; height: 0.75rem; flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                         <circle cx="12" cy="10" r="3"></circle>
                     </svg>Locations</a>
                 <a href="settings.html" class="admin-sidebar-link"><svg class="icon" xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +70,7 @@
         <div class="admin-main-content">
             <header class="header" style="background: white; border-bottom-color: rgb(233, 213, 255);">
                 <div class="flex-1 flex items-center"><button type="button" id="mobile-menu-btn"
-                        class="btn-icon btn-ghost" style="display: none;"><svg class="icon"
+                        class="btn-icon btn-ghost hidden"><svg class="icon"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <line x1="3" y1="12" x2="21" y2="12"></line>
                             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -116,7 +114,7 @@
                 <div class="flex gap-4 overflow-x-auto pb-2">
                     <div class="card" style="border-color: rgb(233, 213, 255); flex: 1 1 0; min-width: 200px;">
                         <div class="card-header flex flex-row items-center justify-between"
-                            style="padding-bottom: 0.5rem;">
+                            style="padding: 1rem; padding-bottom: 0.5rem;">
                             <div class="text-sm font-medium text-gray-600">Total Staff</div>
                         </div>
                         <div class="card-content">
@@ -126,7 +124,7 @@
                     </div>
                     <div class="card" style="border-color: rgb(233, 213, 255); flex: 1 1 0; min-width: 200px;">
                         <div class="card-header flex flex-row items-center justify-between"
-                            style="padding-bottom: 0.5rem;">
+                            style="padding: 1rem; padding-bottom: 0.5rem;">
                             <div class="text-sm font-medium text-gray-600">Clocked In</div>
                         </div>
                         <div class="card-content">
@@ -136,7 +134,7 @@
                     </div>
                     <div class="card" style="border-color: rgb(233, 213, 255); flex: 1 1 0; min-width: 200px;">
                         <div class="card-header flex flex-row items-center justify-between"
-                            style="padding-bottom: 0.5rem;">
+                            style="padding: 1rem; padding-bottom: 0.5rem;">
                             <div class="text-sm font-medium text-gray-600">Location Updates</div>
                         </div>
                         <div class="card-content">
@@ -146,7 +144,7 @@
                     </div>
                     <div class="card" style="border-color: rgb(233, 213, 255); flex: 1 1 0; min-width: 200px;">
                         <div class="card-header flex flex-row items-center justify-between"
-                            style="padding-bottom: 0.5rem;">
+                            style="padding: 1rem; padding-bottom: 0.5rem;">
                             <div class="text-sm font-medium text-gray-600">Last Update</div>
                         </div>
                         <div class="card-content">
@@ -221,7 +219,7 @@
           </div>
           <div class="flex items-center gap-3">
             <span class="badge ${staff.clockedIn ? 'badge-success' : 'badge-default'}">${staff.clockedIn ? 'On Duty' : 'Off Duty'}</span>
-            ${staff.clockedIn ? '<svg class="h-5 w-5 text-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>' : ''}
+            ${staff.clockedIn ? '<svg class="h-3 w-3" style="width: 0.75rem; height: 0.75rem; flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>' : ''}
           </div>
         </div>
       `).join('');
@@ -258,11 +256,10 @@
               <p class="text-sm text-gray-600">${formattedDate} at ${formattedTime}</p>
               ${item.location ? `
                 <div class="flex items-center gap-1 mt-2 text-xs text-gray-500">
-                  <svg class="h-3 w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <svg class="h-3 w-3" style="width: 0.75rem; height: 0.75rem; flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                   </svg>
-                  <span>${item.location.latitude.toFixed(6)}° N, ${item.location.longitude.toFixed(6)}° E</span>
+                  <span>${item.location.latitude.toFixed(6)}ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â° N, ${item.location.longitude.toFixed(6)}ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â° E</span>
                 </div>
               ` : ''}
             </div>

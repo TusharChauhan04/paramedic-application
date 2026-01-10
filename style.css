@@ -70,6 +70,52 @@
   /* Typography */
   --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'Courier New', monospace;
+  /* Extended Color Palette - Purple (Admin Theme) */
+  --purple-50: rgb(250, 245, 255);
+  --purple-100: rgb(243, 232, 255);
+  --purple-200: rgb(233, 213, 255);
+  --purple-300: rgb(216, 180, 254);
+  --purple-600: rgb(147, 51, 234);
+  --purple-700: rgb(126, 34, 206);
+  --purple-900: rgb(88, 28, 135);
+
+  /* Extended Color Palette - Blue */
+  --blue-50: rgb(239, 246, 255);
+  --blue-200: rgb(191, 219, 254);
+  --blue-300: rgb(147, 197, 253);
+  --blue-600: rgb(37, 99, 235);
+
+  /* Extended Color Palette - Red */
+  --red-50: rgb(254, 242, 242);
+  --red-100: rgb(254, 226, 226);
+  --red-200: rgb(254, 202, 202);
+  --red-600: rgb(220, 38, 38);
+  --red-700: rgb(185, 28, 28);
+  --red-800: rgb(153, 27, 27);
+  --red-900: rgb(127, 29, 29);
+
+  /* Extended Color Palette - Orange/Amber */
+  --orange-50: rgb(255, 247, 237);
+  --orange-600: rgb(234, 88, 12);
+  --orange-700: rgb(194, 65, 12);
+  --orange-900: rgb(124, 45, 18);
+  --amber-600: rgb(245, 158, 11);
+
+  /* Extended Color Palette - Green */
+  --green-50: rgb(240, 253, 244);
+  --green-600: rgb(22, 163, 74);
+  --green-700: rgb(21, 128, 61);
+  --green-800: rgb(20, 83, 45);
+
+  /* Extended Color Palette - Teal */
+  --teal-50: rgb(240, 253, 250);
+  --teal-700: rgb(15, 118, 110);
+  --teal-900: rgb(19, 78, 74);
+
+  /* Extended Color Palette - Indigo */
+  --indigo-50: rgb(238, 242, 255);
+  --indigo-700: rgb(67, 56, 202);
+  --indigo-900: rgb(49, 46, 129);
 }
 
 /* ============================================
@@ -153,7 +199,7 @@ a {
 }
 
 a:hover {
-  color: var(--primary-hover);
+  color: rgb(29, 78, 216);
 }
 
 /* ============================================
@@ -518,19 +564,19 @@ a:hover {
 }
 
 .text-gray-500 {
-  color: var(--gray-500);
+  color: rgb(107, 114, 128);
 }
 
 .text-gray-600 {
-  color: var(--gray-600);
+  color: rgb(75, 85, 99);
 }
 
 .text-gray-700 {
-  color: var(--gray-700);
+  color: rgb(55, 65, 81);
 }
 
 .text-gray-900 {
-  color: var(--gray-900);
+  color: rgb(17, 24, 39);
 }
 
 .text-white {
@@ -542,11 +588,11 @@ a:hover {
 }
 
 .text-blue-700 {
-  color: var(--primary-hover);
+  color: rgb(29, 78, 216);
 }
 
 .text-red-600 {
-  color: var(--danger);
+  color: rgb(239, 68, 68);
 }
 
 .text-red-700 {
@@ -617,11 +663,11 @@ a:hover {
 }
 
 .bg-gray-50 {
-  background-color: var(--gray-50);
+  background-color: rgb(249, 250, 251);
 }
 
 .bg-gray-100 {
-  background-color: var(--gray-100);
+  background-color: rgb(243, 244, 246);
 }
 
 .bg-blue-50 {
@@ -633,7 +679,7 @@ a:hover {
 }
 
 .bg-blue-700 {
-  background-color: var(--primary-hover);
+  background-color: rgb(29, 78, 216);
 }
 
 .bg-red-50 {
@@ -641,7 +687,7 @@ a:hover {
 }
 
 .bg-red-600 {
-  background-color: var(--danger);
+  background-color: rgb(239, 68, 68);
 }
 
 .bg-green-50 {
@@ -652,9 +698,6 @@ a:hover {
   background-color: rgb(250, 245, 255);
 }
 
-.bg-green-50 {
-  background-color: rgb(240, 253, 244);
-}
 
 .bg-teal-50 {
   background-color: rgb(240, 253, 250);
@@ -692,7 +735,7 @@ a:hover {
 }
 
 .border-gray-200 {
-  border-color: var(--gray-200);
+  border-color: rgb(229, 231, 235);
 }
 
 .border-gray-300 {
@@ -712,7 +755,7 @@ a:hover {
 }
 
 .border-red-600 {
-  border-color: var(--danger);
+  border-color: rgb(239, 68, 68);
 }
 
 .border-purple-200 {
@@ -891,11 +934,11 @@ a:hover {
 }
 
 .btn-primary:hover:not(:disabled) {
-  background-color: var(--primary-hover);
+  background-color: rgb(29, 78, 216);
 }
 
 .btn-danger {
-  background-color: var(--danger);
+  background-color: rgb(239, 68, 68);
   color: white;
 }
 
@@ -906,20 +949,20 @@ a:hover {
 .btn-outline {
   background-color: transparent;
   border: 1px solid var(--border);
-  color: var(--gray-700);
+  color: rgb(55, 65, 81);
 }
 
 .btn-outline:hover:not(:disabled) {
-  background-color: var(--gray-50);
+  background-color: rgb(249, 250, 251);
 }
 
 .btn-ghost {
   background-color: transparent;
-  color: var(--gray-700);
+  color: rgb(55, 65, 81);
 }
 
 .btn-ghost:hover:not(:disabled) {
-  background-color: var(--gray-100);
+  background-color: rgb(243, 244, 246);
 }
 
 .btn-sm {
@@ -948,7 +991,7 @@ a:hover {
   padding: 0.5rem 0.75rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: var(--gray-900);
+  color: rgb(17, 24, 39);
   background-color: white;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -962,7 +1005,7 @@ a:hover {
 }
 
 .input::placeholder {
-  color: var(--gray-400);
+  color: rgb(156, 163, 175);
 }
 
 .input.h-11 {
@@ -973,7 +1016,7 @@ a:hover {
   display: block;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--gray-700);
+  color: rgb(55, 65, 81);
   margin-bottom: 0.5rem;
 }
 
@@ -983,7 +1026,7 @@ a:hover {
   padding: 0.5rem 2rem 0.5rem 0.75rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: var(--gray-900);
+  color: rgb(17, 24, 39);
   background-color: white;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
   background-position: right 0.5rem center;
@@ -1006,7 +1049,7 @@ a:hover {
   padding: 0.5rem 0.75rem;
   font-size: 0.875rem;
   line-height: 1.5;
-  color: var(--gray-900);
+  color: rgb(17, 24, 39);
   background-color: white;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -1043,14 +1086,14 @@ a:hover {
 .card-title {
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--gray-900);
+  color: rgb(17, 24, 39);
   margin: 0;
   line-height: 1.5;
 }
 
 .card-description {
   font-size: 0.875rem;
-  color: var(--gray-600);
+  color: rgb(75, 85, 99);
   margin: 0.25rem 0 0 0;
   line-height: 1.4;
 }
@@ -1062,7 +1105,7 @@ a:hover {
 .card-footer {
   padding: 1rem 1.5rem;
   border-top: 1px solid var(--border-light);
-  background-color: var(--gray-50);
+  background-color: rgb(249, 250, 251);
 }
 
 /* ============================================
@@ -1079,13 +1122,13 @@ a:hover {
 }
 
 .badge-default {
-  background-color: var(--gray-100);
-  color: var(--gray-700);
+  background-color: rgb(243, 244, 246);
+  color: rgb(55, 65, 81);
 }
 
 .badge-primary {
   background-color: var(--primary-light);
-  color: var(--primary-hover);
+  color: rgb(29, 78, 216);
 }
 
 .badge-success {
@@ -1117,7 +1160,7 @@ a:hover {
 .alert-destructive,
 .alert-danger {
   background-color: var(--danger-light);
-  border-color: var(--danger);
+  border-color: rgb(239, 68, 68);
   color: rgb(127, 29, 29);
 }
 
@@ -1155,20 +1198,20 @@ a:hover {
   padding: 0.75rem 1rem;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--gray-700);
-  background-color: var(--gray-50);
+  color: rgb(55, 65, 81);
+  background-color: rgb(249, 250, 251);
   border-bottom: 1px solid var(--border);
 }
 
 .table td {
   padding: 0.75rem 1rem;
   font-size: 0.875rem;
-  color: var(--gray-900);
+  color: rgb(17, 24, 39);
   border-bottom: 1px solid var(--border-light);
 }
 
 .table tr:hover {
-  background-color: var(--gray-50);
+  background-color: rgb(249, 250, 251);
 }
 
 /* ============================================
@@ -1216,7 +1259,7 @@ a:hover {
 .modal-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--gray-900);
+  color: rgb(17, 24, 39);
 }
 
 .modal-close {
@@ -1224,12 +1267,12 @@ a:hover {
   border: none;
   cursor: pointer;
   padding: 0.25rem;
-  color: var(--gray-500);
+  color: rgb(107, 114, 128);
   transition: color 0.2s;
 }
 
 .modal-close:hover {
-  color: var(--gray-900);
+  color: rgb(17, 24, 39);
 }
 
 .modal-body {
@@ -1282,15 +1325,15 @@ a:hover {
   margin-bottom: 0.25rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--gray-700);
+  color: rgb(55, 65, 81);
   border-radius: var(--radius-lg);
   transition: all 0.2s;
   text-decoration: none;
 }
 
 .sidebar-link:hover {
-  background-color: var(--gray-50);
-  color: var(--gray-900);
+  background-color: rgb(249, 250, 251);
+  color: rgb(17, 24, 39);
 }
 
 .sidebar-link.active {
@@ -1312,7 +1355,7 @@ a:hover {
   margin-bottom: 0.25rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--gray-700);
+  color: rgb(55, 65, 81);
   border-radius: var(--radius-lg);
   transition: all 0.2s;
   text-decoration: none;
@@ -1367,7 +1410,7 @@ a:hover {
   right: 0.25rem;
   width: 0.5rem;
   height: 0.5rem;
-  background-color: var(--danger);
+  background-color: rgb(239, 68, 68);
   border-radius: var(--radius-full);
 }
 
@@ -1388,7 +1431,7 @@ a:hover {
 }
 
 .user-btn:hover {
-  background-color: var(--gray-100);
+  background-color: rgb(243, 244, 246);
 }
 
 .user-avatar {
@@ -1431,14 +1474,14 @@ a:hover {
   align-items: center;
   padding: 0.625rem 1rem;
   font-size: 0.875rem;
-  color: var(--gray-700);
+  color: rgb(55, 65, 81);
   cursor: pointer;
   transition: background-color 0.2s;
   text-decoration: none;
 }
 
 .dropdown-item:hover {
-  background-color: var(--gray-50);
+  background-color: rgb(249, 250, 251);
 }
 
 .dropdown-item svg {
@@ -1448,7 +1491,7 @@ a:hover {
 }
 
 .dropdown-item.danger {
-  color: var(--danger);
+  color: rgb(239, 68, 68);
 }
 
 .dropdown-divider {
@@ -1463,7 +1506,7 @@ a:hover {
 .main-content {
   margin-left: 16rem;
   min-height: 100vh;
-  background-color: var(--gray-50);
+  background-color: rgb(249, 250, 251);
 }
 
 .admin-main-content {
@@ -1528,9 +1571,6 @@ a:hover {
 /* ============================================
    FORM ELEMENTS
    ============================================ */
-.form-group {
-  margin-bottom: 1rem;
-}
 
 .form-row {
   display: flex;
@@ -1572,7 +1612,7 @@ a:hover {
 }
 
 .status-cancelled {
-  background-color: var(--gray-400);
+  background-color: rgb(156, 163, 175);
 }
 
 .status-approved {
@@ -1580,7 +1620,7 @@ a:hover {
 }
 
 .status-rejected {
-  background-color: var(--danger);
+  background-color: rgb(239, 68, 68);
 }
 
 /* ============================================
@@ -1704,25 +1744,13 @@ a:hover {
   margin-top: 1.5rem;
 }
 
-.flex-1 {
-  flex: 1 1 0%;
-}
 
-.flex-shrink-0 {
-  flex-shrink: 0;
-}
 
 .flex-grow {
   flex-grow: 1;
 }
 
-.overflow-hidden {
-  overflow: hidden;
-}
 
-.overflow-y-auto {
-  overflow-y: auto;
-}
 
 .relative {
   position: relative;
@@ -1792,7 +1820,7 @@ a:hover {
 }
 
 .hover\\:bg-blue-700:hover {
-  background-color: var(--primary-hover);
+  background-color: rgb(29, 78, 216);
 }
 
 .hover\\:bg-blue-50:hover {
@@ -1800,7 +1828,7 @@ a:hover {
 }
 
 .hover\\:bg-gray-50:hover {
-  background-color: var(--gray-50);
+  background-color: rgb(249, 250, 251);
 }
 
 .hover\\:border-blue-300:hover {
@@ -1808,7 +1836,7 @@ a:hover {
 }
 
 .hover\\:text-blue-700:hover {
-  color: var(--primary-hover);
+  color: rgb(29, 78, 216);
 }
 
 /* ============================================
@@ -1848,4 +1876,648 @@ a:hover {
 .icon-lg {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+/* ============================================
+   PHASE 1: NEW CSS CLASSES TO REPLACE INLINE STYLES
+   Added: January 10, 2026
+   Purpose: Replace 215+ inline style attributes with CSS classes
+   ============================================ */
+
+/* ============================================
+   LOGIN PAGE STYLES
+   ============================================ */
+.login-card {
+  border-color: rgb(191, 219, 254);
+}
+
+.login-header {
+  border-bottom: none;
+  padding-bottom: 2rem;
+}
+
+.login-logo-container {
+  margin: 0 auto 1rem;
+}
+
+.login-logo {
+  width: 250px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.login-btn {
+  background-color: rgb(37, 99, 235);
+  height: 2.75rem;
+}
+
+.login-input {
+  border-color: var(--gray-300);
+}
+
+.login-link {
+  color: rgb(37, 99, 235);
+}
+
+/* ============================================
+   GRADIENT CARDS
+   ============================================ */
+.gradient-card {
+  background: linear-gradient(to right, rgb(37, 99, 235), rgb(29, 78, 216));
+  border-color: rgb(191, 219, 254);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.gradient-card-content {
+  padding: 1.5rem 2rem;
+}
+
+/* ============================================
+   CLOCK IN/OUT STYLES
+   ============================================ */
+.clock-btn {
+  background: white;
+  color: rgb(37, 99, 235);
+  font-weight: 600;
+  height: 3rem;
+  padding: 0 1.5rem;
+}
+
+.clock-btn-active {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+/* ============================================
+   EMERGENCY / SOS STYLES
+   ============================================ */
+.emergency-card {
+  background-color: rgb(254, 242, 242);
+  border-color: rgb(254, 202, 202);
+}
+
+.emergency-card-content {
+  padding: 1.5rem;
+}
+
+.emergency-btn {
+  background-color: rgb(220, 38, 38);
+  color: white;
+  font-weight: 700;
+  height: 3.5rem;
+  padding: 0 2rem;
+  font-size: 1.125rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.sos-alert-card {
+  background-color: rgb(254, 242, 242);
+  border: 1px solid rgb(239, 68, 68);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.sos-alert-btn {
+  border-color: rgb(239, 68, 68);
+  color: rgb(239, 68, 68);
+  background: transparent;
+}
+
+/* ============================================
+   STATISTICS CARDS
+   ============================================ */
+.stat-card {
+  flex: 1 1 0;
+  min-width: 200px;
+}
+
+.stat-card-sm {
+  flex: 1 1 0;
+  min-width: 180px;
+}
+
+.stat-card-header {
+  padding-bottom: 0.5rem;
+  padding-top: 1rem;
+}
+
+.stat-card-content {
+  padding-top: 0;
+}
+
+/* ============================================
+   SEARCH & FILTER STYLES
+   ============================================ */
+.search-wrapper {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgb(229, 231, 235);
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  color: rgb(156, 163, 175);
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ============================================
+   DETAIL GRID (FOR MODALS/DETAILS)
+   ============================================ */
+.detail-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 2rem;
+  font-size: 0.875rem;
+}
+
+.detail-label {
+  text-align: right;
+  color: #6b7280;
+}
+
+.detail-value {
+  color: #111827;
+}
+
+.detail-value-bold {
+  color: #111827;
+  font-weight: 500;
+}
+
+.detail-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.detail-section-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.detail-section-content {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* ============================================
+   MODAL STYLES (ADDITIONAL)
+   ============================================ */
+.modal-body-padded {
+  padding: 1.5rem;
+}
+
+.modal-content-zero-padding {
+  padding: 0;
+}
+
+/* ============================================
+   TABLE ENHANCEMENTS
+   ============================================ */
+.table-row-clickable {
+  cursor: pointer;
+}
+
+.table-row-clickable:hover {
+  background-color: rgb(249, 250, 251);
+}
+
+/* ============================================
+   ADMIN THEME STYLES
+   ============================================ */
+.admin-bg {
+  background-color: rgb(250, 245, 255);
+}
+
+.admin-card {
+  border-color: rgb(243, 232, 255);
+}
+
+.admin-card-content {
+  background-color: rgb(250, 245, 255);
+}
+
+.admin-text {
+  color: rgb(107, 33, 168);
+}
+
+.admin-text-light {
+  color: rgb(147, 51, 234);
+}
+
+.admin-hover:hover {
+  background-color: rgb(243, 232, 255);
+}
+
+/* ============================================
+   CASE STATUS BACKGROUNDS
+   ============================================ */
+.case-pending-bg {
+  background-color: rgba(239, 246, 255, 0.5);
+}
+
+.case-completed-bg {
+  background-color: rgba(240, 253, 244, 0.5);
+}
+
+.case-cancelled-bg {
+  background-color: rgba(249, 250, 251, 0.5);
+}
+
+/* ============================================
+   CUSTOM PADDING/MARGIN UTILITIES
+   ============================================ */
+
+.pt-8 {
+  padding-top: 2rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+
+/* ============================================
+   ROLE-BASED VISIBILITY
+   ============================================ */
+.hidden-role {
+  display: none !important;
+}
+
+/* ============================================
+   LOADING OVERLAY
+   ============================================ */
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-overlay.show {
+  display: flex;
+}
+
+/* ============================================
+   TAB CONTENT STYLES
+   ============================================ */
+.tab-content-container {
+  padding: 0;
+}
+
+/* ============================================
+   NOTIFICATION/ALERT ADDITIONS
+   ============================================ */
+.alert-inline {
+  background-color: rgb(254, 242, 242);
+  border: 1px solid rgb(239, 68, 68);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+/* ============================================
+   CUSTOM FLEX UTILITIES
+   ============================================ */
+.flex-1-min-w-200 {
+  flex: 1 1 0;
+  min-width: 200px;
+}
+
+.flex-1-min-w-180 {
+  flex: 1 1 0;
+  min-width: 180px;
+}
+
+/* ============================================
+   POSITION UTILITIES
+   ============================================ */
+.pos-relative {
+  position: relative;
+}
+
+.pos-absolute {
+  position: absolute;
+}
+
+/* ============================================
+   COLOR OVERRIDE UTILITIES
+   (For specific RGB colors that appear in inline styles)
+   ============================================ */
+.color-primary {
+  color: rgb(37, 99, 235);
+}
+
+.bg-primary {
+  background-color: rgb(37, 99, 235);
+}
+
+.bg-primary-light {
+  background-color: rgb(219, 234, 254);
+}
+
+.border-primary-light {
+  border-color: rgb(191, 219, 254);
+}
+
+.color-danger {
+  color: rgb(239, 68, 68);
+}
+
+.bg-danger {
+  background-color: rgb(239, 68, 68);
+}
+
+.color-gray-600 {
+  color: #6b7280;
+}
+
+.color-gray-900 {
+  color: #111827;
+}
+
+/* ============================================
+   CARD PADDING VARIATIONS
+   ============================================ */
+.card-content-lg {
+  padding: 1.5rem 2rem;
+}
+
+.card-header-no-border {
+  border-bottom: none;
+}
+
+/* ============================================
+   BUTTON SIZE VARIATIONS
+   ============================================ */
+.btn-xl {
+  height: 3.5rem;
+  padding: 0 2rem;
+  font-size: 1.125rem;
+}
+
+
+/* ============================================
+   TOAST NOTIFICATION STYLES
+   ============================================ */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: all 0.3s;
+  z-index: 100;
+  max-width: 400px;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-success {
+  background-color: var(--success);
+  color: white;
+}
+
+.toast-error {
+  background-color: rgb(239, 68, 68);
+  color: white;
+}
+
+.toast-warning {
+  background-color: var(--warning);
+  color: white;
+}
+
+.toast-info {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* ============================================
+   END OF PHASE 1 CSS ADDITIONS
+   ============================================ */
+
+/* ========================================
+   PHASE 3: Additional CSS Classes for Complex Inline Styles
+   ======================================== */
+
+/* Modal Content Padding */
+
+.card-content-no-padding {
+    padding: 0;
+}
+
+/* Detail Grid Layout (for leads modal and similar) */
+
+.detail-grid-label {
+    text-align: right;
+    color: #6b7280;
+}
+
+.detail-grid-value {
+    color: #111827;
+}
+
+.detail-grid-value-bold {
+    color: #111827;
+    font-weight: 500;
+}
+
+/* Notes Section */
+.notes-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.notes-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.notes-content {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* Dashboard Gradient Cards */
+.gradient-card-green {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.05) 100%);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.gradient-card-blue {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.gradient-card-orange {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(234, 88, 12, 0.05) 100%);
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+.gradient-card-red {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.05) 100%);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Case Detail Styles */
+.case-detail-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-between;
+   gap: 1rem;
+}
+
+.case-detail-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+/* Admin Purple Theme Adjustments */
+.admin-stat-card {
+    background-color: rgb(250, 245, 255);
+    border-color: rgb(243, 232, 255);
+}
+
+.admin-gradient-card {
+    background-color: rgba(250, 245, 255, 0.5);
+    border-color: rgba(216, 180, 254, 0.3);
+}
+
+
+/* Dashboard Special Elements */
+.emergency-warning-card {
+    background-color: rgb(254, 242, 242);
+    border: 1px solid rgb(239, 68, 68);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.emergency-warning-button {
+    border-color: rgb(239, 68, 68);
+    color: rgb(239, 68, 68);
+    background: transparent;
+}
+
+.clock-in-card {
+    background: linear-gradient(to right, rgb(37, 99, 235), rgb(29, 78, 216));
+    border-color: rgb(191, 219, 254);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.clock-in-content {
+    padding: 1.5rem 2rem;
+}
+
+.clock-in-text {
+    color: white;
+}
+
+.clock-in-button {
+    background: white;
+    color: rgb(37, 99, 235);
+    font-weight: 600;
+    height: 3rem;
+    padding: 0 1.5rem;
+}
+
+.sos-card {
+    background-color: rgb(254, 242, 242);
+    border-color: rgb(254, 202, 202);
+}
+
+.sos-button {
+    background-color: rgb(220, 38, 38);
+    color: white;
+    font-weight: 700;
+    height: 3.5rem;
+    padding: 0 2rem;
+    font-size: 1.125rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card-content-no-top-padding {
+    padding-top: 0;
+}
+
+.pending-case-bg {
+    background-color: rgba(239, 246, 255, 0.5);
+}
+
+
+/* Icon Background Colors */
+.icon-bg-blue { background-color: rgba(59, 130, 246, 0.1); }
+.icon-bg-green { background-color: rgba(16, 185, 129, 0.1); }
+.icon-bg-amber { background-color: rgba(245, 158, 11, 0.1); }
+.icon-bg-purple { background-color: rgba(139, 92, 246, 0.1); }
+
+/* Icon Text Colors */
+.icon-text-blue { color: rgb(59, 130, 246); }
+.icon-text-green { color: rgb(16, 185, 129); }
+.icon-text-amber { color: rgb(245, 158, 11); }
+.icon-text-purple { color: rgb(139, 92, 246); }
+
+/* Modal Large with Custom Sizing */
+.modal-xl-no-padding {
+    max-width: 1000px;
+    max-height: 90vh;
+    padding: 0;
+}
+
+/* iframe Container */
+.iframe-container {
+    height: 75vh;
+    width: 100%;
+}
+
+.iframe-full {
+    width: 100%;
+    height: 100%;
+    border: none;
 }

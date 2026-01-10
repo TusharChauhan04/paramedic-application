@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -23,18 +23,7 @@
             <rect x="14" y="14" width="7" height="7"></rect>
             <rect x="3" y="14" width="7" height="7"></rect>
           </svg>Dashboard</a>
-        <a href="admin-users.html" class="sidebar-link" id="admin-users-link" style="display: none;"><svg class="icon"
-            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>User Management</a>
-        <a href="admin-cases.html" class="sidebar-link" id="admin-cases-link" style="display: none;"><svg class="icon"
-            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-          </svg>All Cases</a>
+                        <!-- Admin links will be injected here dynamically by JavaScript if user is admin -->
         <a href="cases.html" class="sidebar-link" id="user-cases-link"><svg class="icon"
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -76,8 +65,7 @@
     </div>
     <div class="main-content">
       <header class="header">
-        <div class="flex-1 flex items-center"><button type="button" id="mobile-menu-btn" class="btn-icon btn-ghost"
-            style="display: none;"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <div class="flex-1 flex items-center"><button type="button" id="mobile-menu-btn" class="btn-icon btn-ghost hidden"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -126,9 +114,7 @@
           </div>
           <div class="card-content">
             <div class="p-6 bg-blue-50 border border-blue-200 rounded-lg text-center">
-              <svg class="h-12 w-12 mx-auto mb-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <svg class="h-3 w-3" style="width: 0.75rem; height: 0.75rem; flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
               <p class="text-sm text-gray-600 mb-2">Your current coordinates:</p>
@@ -163,8 +149,8 @@
         currentLocation = loc;
         el.innerHTML = `
           <div class="space-y-2">
-            <p class="text-xl font-bold text-gray-900">${loc.latitude.toFixed(6)}° N, ${loc.longitude.toFixed(6)}° E</p>
-            <p class="text-sm text-gray-600">Accuracy: ±${loc.accuracy ? loc.accuracy.toFixed(0) : 'N/A'} meters</p>
+            <p class="text-xl font-bold text-gray-900">${loc.latitude.toFixed(6)}ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â° N, ${loc.longitude.toFixed(6)}ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â° E</p>
+            <p class="text-sm text-gray-600">Accuracy: ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±${loc.accuracy ? loc.accuracy.toFixed(0) : 'N/A'} meters</p>
             <p class="text-xs text-gray-500">Last updated: ${new Date().toLocaleTimeString()}</p>
           </div>
         `;
@@ -190,7 +176,7 @@
       const icons = {
         'Clock In': `<svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>`,
         'Clock Out': `<svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>`,
-        'default': `<svg class="h-6 w-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>`
+        'default': `<svg class="h-3 w-3" style="width: 0.75rem; height: 0.75rem; flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>`
       };
       return icons[type] || icons['default'];
     }
@@ -202,8 +188,7 @@
       if (history.length === 0) {
         container.innerHTML = `
           <div class="text-center py-12">
-            <svg class="h-16 w-16 mx-auto text-gray-300 mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <svg class="h-3 w-3" style="width: 0.75rem; height: 0.75rem; flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
               <circle cx="12" cy="10" r="3"></circle>
             </svg>
             <p class="text-gray-500 font-medium">No location history yet</p>
@@ -229,7 +214,7 @@
               item.location.latitude, item.location.longitude
             );
             if (distance > 0.01) {
-              distanceInfo = `<span class="text-xs text-gray-500 ml-2">• ${distance < 1 ? (distance * 1000).toFixed(0) + 'm' : distance.toFixed(2) + 'km'} from previous</span>`;
+              distanceInfo = `<span class="text-xs text-gray-500 ml-2">ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ ${distance < 1 ? (distance * 1000).toFixed(0) + 'm' : distance.toFixed(2) + 'km'} from previous</span>`;
             }
           }
         }
@@ -247,11 +232,10 @@
               <p class="text-sm text-gray-600 mt-1">${formattedDate} at ${formattedTime}</p>
               ${item.location ? `
                 <div class="flex items-center gap-1 mt-2 text-xs text-gray-500">
-                  <svg class="h-3 w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <svg class="h-3 w-3" style="width: 0.75rem; height: 0.75rem; flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                   </svg>
-                  <span>${item.location.latitude.toFixed(6)}° N, ${item.location.longitude.toFixed(6)}° E</span>
+                  <span>${item.location.latitude.toFixed(6)}ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â° N, ${item.location.longitude.toFixed(6)}ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â° E</span>
                 </div>
               ` : '<p class="text-xs text-gray-400 mt-2">Location data unavailable</p>'}
             </div>

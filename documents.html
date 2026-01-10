@@ -27,24 +27,7 @@
                     </svg>
                     Dashboard
                 </a>
-                <a href="admin-users.html" class="sidebar-link" id="admin-users-link" style="display: none;">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                    </svg>
-                    User Management
-                </a>
-                <a href="admin-cases.html" class="sidebar-link" id="admin-cases-link" style="display: none;">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                    </svg>
-                    All Cases
-                </a>
+                                <!-- Admin links will be injected here dynamically by JavaScript if user is admin -->
                 <a href="cases.html" class="sidebar-link" id="user-cases-link">
                     <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor">
@@ -83,9 +66,7 @@
                     Documents
                 </a>
                 <a href="location.html" class="sidebar-link">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <svg class="h-3 w-3" style="width: 0.75rem; height: 0.75rem; flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                         <circle cx="12" cy="10" r="3"></circle>
                     </svg>
                     Location Tracking
@@ -108,7 +89,7 @@
             <!-- Header -->
             <header class="header">
                 <div class="flex-1 flex items-center">
-                    <button type="button" id="mobile-menu-btn" class="btn-icon btn-ghost" style="display: none;">
+                    <button type="button" id="mobile-menu-btn" class="btn-icon btn-ghost hidden">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <line x1="3" y1="12" x2="21" y2="12"></line>
                             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -160,8 +141,8 @@
                     <!-- Flight Details Card -->
                     <div class="document-card-horizontal" onclick="showDocumentDetails('flightDetails')"
                         id="card-flightDetails">
-                        <div class="card-icon-horizontal" style="background-color: rgba(59, 130, 246, 0.1);">
-                            <svg class="h-6 w-6" style="color: rgb(59, 130, 246);" xmlns="http://www.w3.org/2000/svg"
+                        <div style="width: 3rem; height: 3rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;" class="icon-bg-blue">
+                            <svg class="h-6 w-6 icon-text-blue" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path
                                     d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z">
@@ -177,8 +158,8 @@
                     <!-- Quotation Card -->
                     <div class="document-card-horizontal" onclick="showDocumentDetails('quotations')"
                         id="card-quotations">
-                        <div class="card-icon-horizontal" style="background-color: rgba(16, 185, 129, 0.1);">
-                            <svg class="h-6 w-6" style="color: rgb(16, 185, 129);" xmlns="http://www.w3.org/2000/svg"
+                        <div style="width: 3rem; height: 3rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;" class="icon-bg-green">
+                            <svg class="h-6 w-6 icon-text-green" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                 <polyline points="14 2 14 8 20 8"></polyline>
@@ -195,8 +176,8 @@
                     <!-- Sub Quotation Card -->
                     <div class="document-card-horizontal" onclick="showDocumentDetails('subQuotations')"
                         id="card-subQuotations">
-                        <div class="card-icon-horizontal" style="background-color: rgba(245, 158, 11, 0.1);">
-                            <svg class="h-6 w-6" style="color: rgb(245, 158, 11);" xmlns="http://www.w3.org/2000/svg"
+                        <div style="width: 3rem; height: 3rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;" class="icon-bg-amber">
+                            <svg class="h-6 w-6 icon-text-amber" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                 <polyline points="14 2 14 8 20 8"></polyline>
@@ -212,8 +193,8 @@
 
                     <!-- Invoice Card -->
                     <div class="document-card-horizontal" onclick="showDocumentDetails('invoices')" id="card-invoices">
-                        <div class="card-icon-horizontal" style="background-color: rgba(139, 92, 246, 0.1);">
-                            <svg class="h-6 w-6" style="color: rgb(139, 92, 246);" xmlns="http://www.w3.org/2000/svg"
+                        <div style="width: 3rem; height: 3rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;" class="icon-bg-purple">
+                            <svg class="h-6 w-6 icon-text-purple" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect x="2" y="5" width="20" height="14" rx="2"></rect>
                                 <line x1="2" y1="10" x2="22" y2="10"></line>
@@ -275,8 +256,8 @@
         // Sample document data
         const documentsData = {
             flightDetails: [
-                { id: 'FD-001', date: '2024-01-15', flightNumber: 'AI-123', route: 'DXB → DEL', status: 'Confirmed', passengers: '2' },
-                { id: 'FD-002', date: '2024-01-18', flightNumber: 'AI-456', route: 'DEL → BOM', status: 'Pending', passengers: '1' }
+                { id: 'FD-001', date: '2024-01-15', flightNumber: 'AI-123', route: 'DXB ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¾ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ DEL', status: 'Confirmed', passengers: '2' },
+                { id: 'FD-002', date: '2024-01-18', flightNumber: 'AI-456', route: 'DEL ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¾ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ BOM', status: 'Pending', passengers: '1' }
             ],
             quotations: [
                 { id: 'QUO-001', date: '2024-01-10', client: 'Air Medical', amount: 5000, status: 'Sent', validUntil: '2024-02-10' },
@@ -588,22 +569,6 @@
             border-collapse: collapse;
         }
     </style>
-    <script>
-        // Show/hide navigation links based on user role
-        (function () {
-            const user = Auth.getCurrentUser();
-            if (user && user.userType === 'admin') {
-                // Show admin-only links
-                const adminUsersLink = document.getElementById('admin-users-link');
-                const adminCasesLink = document.getElementById('admin-cases-link');
-                const userCasesLink = document.getElementById('user-cases-link');
-
-                if (adminUsersLink) adminUsersLink.style.display = '';
-                if (adminCasesLink) adminCasesLink.style.display = '';
-                if (userCasesLink) userCasesLink.style.display = 'none';
-            }
-        })();
-    </script>
 </body>
 
 </html>
